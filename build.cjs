@@ -17,6 +17,7 @@ fs.readdir(`./src/`, function (err, files) {
     fs.readFile(`src/${file}`, `utf8`, (err, data) => {
       if (err) return
 
+      data = data.replaceAll(`﻿`, ``)
       const markdown = data.split(`\r\n`).slice(7).join(`\n`)
       console.log(converter.makeHtml(markdown))
 
