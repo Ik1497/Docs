@@ -14,11 +14,15 @@ In Streamer.bot select `Import` in the top left.
 Drag and Drop the `Import File` into the
  `Import String`.
 
+!﻿[Installation Guide](/Extensions/Mute-Indicator/installation.png)
+
 #﻿# Configuration
 #﻿## Streamer.bot
 1. Make sure you've imported the import code [above](#actions-import).
 2. Link the `Mute Indicator - Mute event` action to the `InputMuteStateChanged` event in Stream Apps --> OBS.
 3. Make sure that the `Server/Clients` `-->` `Websocket Server` is enabled.
+
+!﻿[OBS Event Preview Image](/Extensions/Mute-Indicator/overview-obs-event.png)
 
 #﻿## OBS Studio
 1. Make a browser source in OBS Studio with the settings: `Width = 1920`, `Height = 1080`.
@@ -27,6 +31,7 @@ Drag and Drop the `Import File` into the
 #﻿# Widget
 Put this URL into OBS: https://ik1497.github.io/Extensions/Mute-Indicator/
 
-#﻿## URL Parameters
+!﻿[Overview GIF of the widget](/Extensions/Mute-Indicator/overview.gif)
 
+#﻿## URL Parameters
 [Customize with URL Parameters](https://ik1497.github.io/Extensions-Builder/#Mute-Indicator)
