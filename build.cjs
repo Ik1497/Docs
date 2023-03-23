@@ -1,7 +1,20 @@
 const fs  = require(`fs`)
 const showdown  = require(`showdown`)
 
-let converter = new showdown.Converter()
+const classMap = {
+  img: `img-400`
+}
+
+const bindings = Object.keys(classMap)
+  .map(key => ({
+    type: `output`,
+    regex: new RegExp(`<${key}(.*)>`, `g`),
+    replace: `<${key} class="${classMap[key]}" $1>`
+  }));
+
+let converter = new showdown.Converter({
+  extensions: [...bindings]
+})
 
 converter.setOption(`tables`, true)
 converter.setOption(`emoji`, true)
