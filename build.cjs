@@ -31,7 +31,6 @@ fs.readdir(`./src/`, function (err, files) {
       const html = converter.makeHtml(markdown)
       const metadata = converter.getMetadata()
       const htmlFileName = metadata?.path ? metadata?.path + `.html` : file
-      console.log(metadata, htmlFileName)
 
       fs.writeFile(`dist/${htmlFileName}`, createPage(html, metadata), (err) => {
         if (err) return
