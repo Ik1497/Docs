@@ -1,0 +1,22 @@
+<h2 id="math">Math</h2>
+<p>Levaraging the <a href="https://github.com/mariuszgromada/MathParser.org-mXparser">mXparser</a> library, you can now evaluate mathematical equations directly inline with variable replacements.</p>
+<h3 id="inlinemathexamples">Inline Math Examples</h3>
+<ul>
+<li><code>$math(10+10)$</code></li>
+<li><code>$math(%x% * 1.275971208)$</code></li>
+<li><code>$math(%tier% * 10)$</code></li>
+<li><code>$math(%duration% / 1000)$</code></li>
+</ul>
+<h2 id="supportedtokens">Supported Tokens</h2>
+<p>For easier reference, these are all the supported tokens, this is current for the version of mXparser that is used, these can also be seen on the <a href="https://github.com/mariuszgromada/MathParser.org-mXparser">mXparser</a> GitHub, version 4.4.2 is the version in use.</p>
+<h3 id="numberformat">Number format</h3>
+<p>|Keyword|Category|Description|Example|
+|---|---|---|---|---|
+|Number|Decimal Number|Decimal number|1, 1.5, -
+|Number|Decimal Number|Decimal number - scientific notation|1.2e10, -2.4e-10, 2.3E+10|
+|Number|Binary Number|Binary number - number literal| b.10101, B.10101, b2.10010|
+|Number|Octal Number|Octal number - number literal| o.1027, O.1027, b8.1027|
+|Number|Hexadecimal Number|Hexadecimal number - number literal| h.12fE, H.12fE, b16.12fE|
+|Number|Unary Number|Unary number - number literal| b1.111 , B1.111|
+|Number|Base 1-36|Base 1-36 number - number literal| bN.xxxx , BN.xxxx|
+|Number|Fraction|Number literal as fraction| 1<em>2 , 2</em>3<em>4, 172</em>345, 345_172 |</p>
