@@ -27,4 +27,6 @@ fs.readdir(`./src/`, function (err, files) {
   });
 });
 
-// let html = converter.makeHtml(text)
+function createPage(html) {
+
+}
