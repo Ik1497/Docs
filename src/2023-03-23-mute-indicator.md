@@ -11,7 +11,8 @@ TlM0RR+LCAAAAAAABACdVF1vmzAUfZ+0/4DytEmjMpCEZJomtWmbQtd0kAZIRh+MbYgbYxhfKa3232eg
 
 #﻿# Installation
 In Streamer.bot select `Import` in the top left.
-Drag and Drop the `Import File` into the `Import String`.
+Drag and Drop the `Import File` into the
+ `Import String`.
 
 #﻿# Configuration
 #﻿## Streamer.bot
@@ -27,4 +28,5 @@ Drag and Drop the `Import File` into the `Import String`.
 Put this URL into OBS: https://ik1497.github.io/Extensions/Mute-Indicator/
 
 #﻿## URL Parameters
-[Customize with URL Parameters](https://ik1497.github.io/Extensions-Builder/#Mute-Indicator)
+
+[Customize with URL Parameters](https://ik1497.github.io/Extensions-Builder/#Mute-Indicator)

@@ -1,9 +1,21 @@
 const fs  = require(`fs`)
-const glob = require(`glob`)
 const showdown  = require(`showdown`)
 
 let converter = new showdown.Converter()
+
 converter.setOption(`tables`, true)
+converter.setOption(`emoji`, true)
+converter.setOption(`excludeTrailingPunctuationFromURLs`, true)
+converter.setOption(`ghCompatibleHeaderId`, true)
+converter.setOption(`metadata`, true)
+converter.setOption(`noHeaderId`, true)
+converter.setOption(`omitExtraWLInCodeBlocks`, true)
+converter.setOption(`openLinksInNewWindow`, true)
+converter.setOption(`parseImgDimensions`, true)
+converter.setOption(`simplifiedAutoLink`, true)
+converter.setOption(`strikethrough`, true)
+converter.setOption(`tasklists`, true)
+converter.setOption(`underline`, true)
 
 fs.readdir(`./src/`, function (err, files) {
   if (err) return
@@ -11,22 +23,24 @@ fs.readdir(`./src/`, function (err, files) {
   files.forEach(function (file) {
     if (!file.endsWith(`.md`)) return
 
-    const htmlFileName = file.slice(11).replace(`.md`, `.html`)
-    console.log(htmlFileName)
     fs.readFile(`src/${file}`, `utf8`, (err, data) => {
       if (err) return
-
+      
       data = data.replaceAll(`﻿`, ``).replaceAll(`\r`, ``)
-      const markdown = data.split(`\n`).slice(6).join(`\n`)
+      const markdown = data.split(`\n`).join(`\n`)
+      const html = converter.makeHtml(markdown)
+      const metadata = converter.getMetadata()
+      const htmlFileName = metadata?.path ? metadata?.path + `.html` : file
+      console.log(metadata, htmlFileName)
 
-      fs.writeFile(`dist/${htmlFileName}`, createPage(converter.makeHtml(markdown)), (err) => {
+      fs.writeFile(`dist/${htmlFileName}`, createPage(html, metadata), (err) => {
         if (err) return
       });
     });
   });
 });
 
-function createPage(html) {
+function createPage(html, metadata) {
 
 return `<!DOCTYPE html>
 <html lang="en">
@@ -43,11 +57,11 @@ return `<!DOCTYPE html>
     <meta name="author" content="Ik1497">
     
     <!-- Page Meta -->
-    <meta property="og:title" content="Mute Indicator">
-    <title>Mute Indicator</title>
+    <meta property="og:title" content="${metadata?.title}">
+    <title>${metadata?.title}</title>
     
-    <meta property="og:description" content="Mute Indicator so you can see if and what sources are muted.">
-    <meta name="description" content="Mute Indicator so you can see if and what sources are muted.">
+    <meta property="og:description" content="${metadata?.description}">
+    <meta name="description" content="${metadata?.description}">
     
     <!-- Scripts -->
     <script src="/assets/js/head.js"></script>

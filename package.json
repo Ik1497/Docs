@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "build": "node build.cjs",
-    "deploy": "git commit --all --message=Build && git push && git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
+    "deploy": "git commit --all --message=Build && git push && git push origin :gh-pages && git subtree push --prefix dist origin gh-pages",
+    "pull": "git pull"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,6 @@
   },
   "homepage": "https://github.com/Ik1497/Docs#readme",
   "dependencies": {
-    "glob": "^9.3.2",
     "showdown": "^2.1.0"
   }
 }
