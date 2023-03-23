@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "/dist/public"
+public_folder: "/dist/public"
+collections:
+  - name: "data"
+    label: "Data"
+    folder: "src"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "MDI Icon", name: "mdiIcon", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
