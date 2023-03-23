@@ -40,40 +40,39 @@ fs.readdir(`./src/`, function (err, files) {
 });
 
 function createPage(html, metadata) {
-
-return `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Site Meta -->
-    <meta name="og:site_name" content="Streamer.bot Actions">
-    <meta property="og:image" content="https://ik1497.github.io/assets/images/favicon.png">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#B80086">
-    <meta name="author" content="Ik1497">
-    
-    <!-- Page Meta -->
-    <meta property="og:title" content="${metadata?.title}">
-    <title>${metadata?.title}</title>
-    
-    <meta property="og:description" content="${metadata?.description}">
-    <meta name="description" content="${metadata?.description}">
-    
-    <!-- Scripts -->
-    <script src="/assets/js/head.js"></script>
-    <script src="/assets/js/main.js" defer></script>
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/style.css">    
-  </head>
-  <body>
-    <main>
-      ${html}
-    </main>
-  </body>
-</html>
-`
+  return `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <!-- Site Meta -->
+      <meta name="og:site_name" content="Streamer.bot Actions">
+      <meta property="og:image" content="https://ik1497.github.io/assets/images/favicon.png">
+      <meta property="og:type" content="website">
+      <meta name="theme-color" content="#B80086">
+      <meta name="author" content="Ik1497">
+      
+      <!-- Page Meta -->
+      <meta property="og:title" content="${metadata?.title}">
+      <title>${metadata?.title}</title>
+      
+      <meta property="og:description" content="${metadata?.description}">
+      <meta name="description" content="${metadata?.description}">
+      
+      <!-- Scripts -->
+      <script src="/assets/js/head.js"></script>
+      <script src="/assets/js/main.js" defer></script>
+      
+      <!-- Styles -->
+      <link rel="stylesheet" href="/assets/css/style.css">    
+    </head>
+    <body>
+      <main>
+        ${html}
+      </main>
+    </body>
+  </html>
+  `
 }
