@@ -1,0 +1,19 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "node build.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ik1497/Docs.git"
+  },
+  "author": "Ik1497",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ik1497/Docs/issues"
+  },
+  "homepage": "https://github.com/Ik1497/Docs#readme"
+}
