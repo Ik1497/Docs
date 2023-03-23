@@ -32,7 +32,7 @@ fs.readdir(`./src/`, function (err, files) {
       const metadata = converter.getMetadata()
       const htmlFileName = metadata?.path ? metadata?.path + `.html` : file
 
-      fs.writeFile(`dist/${htmlFileName}`, createPage(html, metadata), (err) => {
+      fs.writeFile(`docs/${htmlFileName}`, createPage(html, metadata), (err) => {
         if (err) return
       });
     });
