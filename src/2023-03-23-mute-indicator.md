@@ -27,4 +27,4 @@ Drag and Drop the `Import File` into the `Import String`.
 Put this URL into OBS: https://ik1497.github.io/Extensions/Mute-Indicator/
 
 #﻿## URL Parameters
-[﻿Customize with URL Parameters](https://ik1497.github.io/Extensions-Builder/#Mute-Indicator)
+[Customize with URL Parameters](https://ik1497.github.io/Extensions-Builder/#Mute-Indicator)
