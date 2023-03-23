@@ -34,10 +34,4 @@ Put this URL into OBS: https://ik1497.github.io/Extensions/Mute-Indicator/
 !﻿[Overview GIF of the widget](/Extensions/Mute-Indicator/overview.gif)
 
 #﻿## URL Parameters
-<i-button-grid>
-<i-button-grid-item data-name="Customize with URL Parameters" data-description="Find the URL Parameters of this widget on this website" data-icon="mdi:google-chrome" data-link="/Extensions-Builder/"></i-button-grid-item>
-    data-name="Customize with URL Parameters" data-description="Find the URL Parameters of this widget on this website" data-icon="mdi:google-chrome" data-link="/Extensions-Builder/"></i-button-grid-item>
-    data-description="Find the URL Parameters of this widget on this website" data-icon="mdi:google-chrome" data-link="/Extensions-Builder/"></i-button-grid-item>
-    data-icon="mdi:google-chrome" data-link="/Extensions-Builder/"></i-button-grid-item>
-    data-link="/Extensions-Builder/"></i-button-grid-item>
-</i-button-grid>
+<i-button-grid><i-button-grid-item data-name="Customize with URL Parameters" data-description="Find the URL Parameters of this widget on this website" data-icon="mdi:google-chrome" data-link="/Extensions-Builder/"></i-button-grid-item></i-button-grid>
