@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "build": "node build.cjs",
-    "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
+    "deploy": "git commit --all --message=Build && git push && git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",

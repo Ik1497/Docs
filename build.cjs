@@ -10,7 +10,6 @@ fs.readdir(`./src/`, function (err, files) {
 
   files.forEach(function (file) {
     if (!file.endsWith(`.md`)) return
-    console.log(file)
 
     const htmlFileName = file.slice(11).replace(`.md`, `.html`)
 
@@ -20,7 +19,7 @@ fs.readdir(`./src/`, function (err, files) {
       data = data.replaceAll(`﻿`, ``).replaceAll(`\r`, ``)
       const markdown = data.split(`\n`).slice(6).join(`\n`)
 
-      fs.writeFile(`dist/${htmlFileName}`, converter.makeHtml(markdown), (err) => {
+      fs.writeFile(`dist/${htmlFileName}`, createPage(converter.makeHtml(markdown)), (err) => {
         if (err) return
       });
     });
@@ -29,4 +28,15 @@ fs.readdir(`./src/`, function (err, files) {
 
 function createPage(html) {
 
+return `
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    ${html}
+  </body>
+</html>
+`
 }
