@@ -12,8 +12,28 @@ const bindings = Object.keys(classMap)
     replace: `<${key} class="${classMap[key]}" $1>`
   }));
 
+const customClassExt = {
+  type: `output`,
+  filter: function (text) {
+    return text
+      // Add class for list (ol, ul)
+      .replace(/<p>\[\.([a-z0-9A-Z\s]+)\]<\/p>[\n]?<(.+)>/g, `<$2 class="$1">`)
+    
+      // Add class for other blocks
+      .replace(/<(.+)>\[\.([a-z0-9A-Z\s]+)\]/g, `<$1 class="$2">`)
+      
+      // Prevent class name with 2 dashs being replace by `<em>` tag
+      .replace(/class="(.+)"/g, function (str) {
+          if (str.indexOf("<em>") !== -1) {
+              return str.replace(/<[/]?em>/g, '_');
+          }
+          return str;
+      });
+  }
+};
+
 let converter = new showdown.Converter({
-  extensions: [...bindings]
+  extensions: [...bindings, customClassExt]
 })
 
 converter.setOption(`tables`, true)
