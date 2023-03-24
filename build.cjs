@@ -50,13 +50,13 @@ converter.setOption(`strikethrough`, true)
 converter.setOption(`tasklists`, true)
 converter.setOption(`underline`, true)
 
-fs.readdir(`./src/`, function (err, files) {
+fs.readdir(`./docs-src/`, function (err, files) {
   if (err) return
 
   files.forEach(function (file) {
     if (!file.endsWith(`.md`)) return
 
-    fs.readFile(`src/${file}`, `utf8`, (err, data) => {
+    fs.readFile(`docs-src/${file}`, `utf8`, (err, data) => {
       if (err) return
       
       data = data.replaceAll(`﻿`, ``).replaceAll(`\r`, ``)

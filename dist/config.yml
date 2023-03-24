@@ -1,12 +1,12 @@
 backend:
   name: git-gateway
   branch: main
-media_folder: "/dist/public"
-public_folder: "/dist/public"
+media_folder: "/docs-src/"
+public_folder: "/docs-src/"
 collections:
   - name: "docs"
     label: "Docs"
-    folder: "src"
+    folder: "docs-src"
     create: true
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
     fields:
@@ -15,8 +15,51 @@ collections:
       - { label: "Path", name: "path", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "url-parameters"
+    label: "URL Parameters"
+    folder: "url-parameters-src"
+    create: true
+    editor:
+      preview: false
+    extension: "json"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
+    fields:
+      - label: "Name"
+        name: "name"
+        widget: "string"
+      - label: "Base Url"
+        name: "baseUrl"
+        widget: "string"
+      - label: "URL Search Params"
+        name: "URLSearchParams"
+        widget: "list"
+        fields:
+          - label: "Name"
+            name: "name"
+            required: true
+            widget: "string"
+          - label: "Description"
+            name: "description"
+            required: false
+            widget: "string"
+          - label: "Default"
+            name: "default"
+            required: false
+            widget: "string"
+          - label: "Type"
+            name: "type"
+            required: true
+            default: "string"
+            options: ["string", "number", "options", "color", "checkbox", "comma-list", "heading", "text", "link"]
+            widget: "select"
+          - label: "Options (type: options)"
+            name: "options"
+            required: false
+            widget: "string"
   - name: "settings"
     label: "Settings"
+    editor:
+      preview: false
     files:
       - name: "navigation"
         label: "Navigation"
