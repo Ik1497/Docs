@@ -15,3 +15,71 @@ collections:
       - { label: "Path", name: "path", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "navigation"
+        label: "Navigation"
+        file: "api/navigation.json"
+        fields:
+          - name: "Navigation Items"
+            label: "navigation-items"
+            widget: "list"
+            fields:
+              - name: "Navigation Item"
+                label: "navigation-items"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - name: "Name"
+                    label: "name"
+                    widget: "string"
+                  - name: "Type"
+                    label: "type"
+                    default: "group"
+                    widget: "hidden"
+                  - name: "Group Item"
+                    label: "groupItems"
+                    widget: "list"
+                    fields:
+                      - name: "Group Item"
+                        label: "groupItem"
+                        widget: "object"
+                        collapsed: true
+                        fields:
+                          - name: "Name"
+                            label: "name"
+                            widget: "string"
+                          - name: "Description"
+                            label: "description"
+                            widget: "string"
+                          - name: "Icon"
+                            label: "icon"
+                            default: "mdi mdi-"
+                            widget: "string"
+                          - name: "HREF"
+                            label: "href"
+                            widget: "string"
+                          - name: "type"
+                            label: "type"
+                            default: "link"
+                            widget: "hidden"
+                          - name: "Channel"
+                            label: "channel"
+                            default: "beta"
+                            options: ["public", "beta"]
+                            widget: "select"
+                          - name: "Last Edited"
+                            label: "lastEdited"
+                            widget: "object"
+                            collapsed: false
+                            fields:
+                              - name: "date"
+                                label: "Date"
+                                format: "MM/DD/YYYY"
+                                widget: "date"
+                              - name: "Time"
+                                label: "time"
+                                time_format: "HH:mm"
+                                date_format: false
+                                widget: "datetime"
