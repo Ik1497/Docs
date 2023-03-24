@@ -1,3 +1,24 @@
 {
-  "navigationItems": []
+  "navigationItems": [
+    {
+      "type": "group",
+      "name": "General",
+      "groupItems": [
+        {
+          "groupItem": {
+            "icon": "mdi mdi-home",
+            "type": "link",
+            "channel": "public",
+            "lastEdited": {
+              "date": "03/24/2023",
+              "Time": "2023-03-24T10:49:16.659Z"
+            },
+            "name": "Home",
+            "description": "Description",
+            "href": "/"
+          }
+        }
+      ]
+    }
+  ]
 }
