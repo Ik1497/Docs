@@ -89,7 +89,7 @@ collections:
         label: "URL Parameters Config"
         file: "api/url-parameters.json"
         fields:
-          - name: "urlParamsPages"
+          - name: "pages"
             label: "URL Parameters Pages"
             widget: "list"
             fields:
