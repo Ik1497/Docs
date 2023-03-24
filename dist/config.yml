@@ -15,7 +15,6 @@ collections:
       - { label: "Path", name: "path", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-<<<<<<< HEAD:dist/admin/config.yml
   - name: "settings"
     label: "Settings"
     files:
@@ -84,5 +83,3 @@ collections:
                                 time_format: "HH:mm"
                                 date_format: false
                                 widget: "datetime"
-=======
->>>>>>> 9b805076be2482649b8608c29789066b91736037:dist/config.yml
