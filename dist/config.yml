@@ -15,24 +15,6 @@ collections:
       - { label: "Path", name: "path", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "text" }
-  - name: "url-parameters"
-    label: "URL Parameters"
-    folder: "url-parameters-src"
-    create: true
-    editor:
-      preview: false
-    extension: "json"
-    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
-    fields:
-      - label: "Name"
-        name: "name"
-        widget: "string"
-      - label: "Base Url"
-        name: "baseUrl"
-        widget: "string"
-      - label: "URL Search Params"
-        name: "URLSearchParams"
-        widget: "text"
   - name: "settings"
     label: "Settings"
     editor:
@@ -44,7 +26,6 @@ collections:
         fields:
           - name: "navigationItems"
             label: "Navigation Items"
-            default: "navigationItems"
             widget: "list"
             fields:
               - name: "name"
@@ -99,3 +80,40 @@ collections:
                             time_format: "HH:mm"
                             date_format: false
                             widget: "datetime"
+  - name: "extensions-builder"
+    label: "Extensions Builder"
+    editor:
+      preview: false
+    files:
+      - name: "url-parameters-config"
+        label: "URL Parameters Config"
+        file: "api/url-parameters.json"
+        fields:
+          - name: "urlParamsPages"
+            label: "URL Parameters Pages"
+            widget: "list"
+            fields:
+              - name: "path"
+                label: "Path"
+                widget: "string"
+  - name: "url-parameters"
+    label: "URL Parameters"
+    folder: "url-parameters-src"
+    create: true
+    editor:
+      preview: false
+    extension: "json"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
+    fields:
+      - label: "Name"
+        name: "name"
+        widget: "string"
+      - label: "Path"
+        name: "path"
+        widget: "string"
+      - label: "Base Url"
+        name: "baseUrl"
+        widget: "string"
+      - label: "URL Search Params"
+        name: "URLSearchParams"
+        widget: "text"
