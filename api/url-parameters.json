@@ -3,5 +3,10 @@
     {
       "path": "Progress-Bar"
     }
+  ],
+  "pages": [
+    {
+      "path": "Progress-Bar"
+    }
   ]
 }
