@@ -93,7 +93,7 @@ collections:
             label: "URL Parameters Pages"
             widget: "list"
             fields:
-              - name: "path"
+              - name: "apiPath"
                 label: "API Path"
                 widget: "string"
               - name: "path"
