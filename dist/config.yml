@@ -94,6 +94,9 @@ collections:
             widget: "list"
             fields:
               - name: "path"
+                label: "API Path"
+                widget: "string"
+              - name: "path"
                 label: "Path"
                 widget: "string"
   - name: "url-parameters"
