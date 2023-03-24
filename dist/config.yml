@@ -22,14 +22,12 @@ collections:
         label: "Navigation"
         file: "api/navigation.json"
         fields:
-          - name: "Navigation Items"
-            label: "navigationItems"
+          - name: "navigationItems"
+            label: "Navigation Items"
             default: "navigationItems"
             widget: "list"
             fields:
-              - name: "navigationItem"
-                label: "Navigation Item"
-                widget: "object"
+              - widget: "object"
                 collapsed: true
                 fields:
                   - name: "name"
