@@ -1,7 +1,10 @@
 {
   "pages": [
     {
-      "path": "Progress-Bar"
+      "path": "progress-bar"
+    },
+    {
+      "path": "mute-indicator"
     }
   ]
 }
