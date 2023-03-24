@@ -13,7 +13,7 @@ date: 2023-03-24T00:05:08.803Z
 ## Widget
 Put this URL into OBS: [https://ik1497.github.io/Extensions/Weather/](https://ik1497.github.io/Extensions/Weather/)
 
-![overview.png](/Extensions/Weather/overview.png)
+![Preview of how the widget will or can look](/Extensions/Weather/overview.png)
 
 ### Day
 ![overview-day.gif](/Extensions/Weather/overview-day.gif)
