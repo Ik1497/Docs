@@ -103,7 +103,7 @@ collections:
     editor:
       preview: false
     extension: "json"
-    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
+    slug: "{{fields.path}}"
     fields:
       - label: "Name"
         name: "name"
