@@ -11,6 +11,10 @@
     {
       "apiPath": "music-widget",
       "path": "Music-Widget"
+    },
+    {
+      "apiPath": "weather-widget",
+      "path": "Weather-Widget"
     }
   ]
 }
