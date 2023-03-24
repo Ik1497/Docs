@@ -46,20 +46,6 @@
       "groupItems": [
         {
           "groupItem": {
-            "icon": "mdi mdi-progress-upload",
-            "type": "link",
-            "channel": "public",
-            "lastEdited": {
-              "date": "03/24/2023",
-              "Time": "2023-03-24T10:51:56.517Z"
-            },
-            "description": "Make an easy to set-up dynamic progress bar with Streamer.bot",
-            "name": "Progress Bar v2.4",
-            "href": "/Extensions/Progress-Bar/Docs"
-          }
-        },
-        {
-          "groupItem": {
             "icon": "mdi mdi-timer-outline",
             "type": "link",
             "channel": "beta",
@@ -70,6 +56,20 @@
             "name": "Timer Widget",
             "description": "Start, pause and stop a timer with Streamer.bot",
             "href": "/Extensions/Timer/Docs"
+          }
+        },
+        {
+          "groupItem": {
+            "icon": "mdi mdi-progress-upload",
+            "type": "link",
+            "channel": "public",
+            "lastEdited": {
+              "date": "03/24/2023",
+              "Time": "2023-03-24T10:51:56.517Z"
+            },
+            "description": "Make an easy to set-up dynamic progress bar with Streamer.bot",
+            "name": "Progress Bar v2.4",
+            "href": "/Extensions/Progress-Bar/Docs"
           }
         },
         {
