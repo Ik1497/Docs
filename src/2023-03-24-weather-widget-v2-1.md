@@ -16,7 +16,7 @@ Put this URL into OBS: [https://ik1497.github.io/Extensions/Weather/](https://ik
 ![Preview of how the widget will or can look](/Extensions/Weather/overview.png)
 
 ### Day
-![overview-day.gif](/Extensions/Weather/overview-day.gif)
+![Preview of how the widget looks when it's night time](/Extensions/Weather/overview-day.gif)
 
 ### Night
 ![overview-night.gif](/Extensions/Weather/overview-night.gif)
