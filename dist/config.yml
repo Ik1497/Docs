@@ -27,7 +27,10 @@ collections:
             default: "navigationItems"
             widget: "list"
             fields:
-              - widget: "object"
+              - name: "navigationItems"
+                default: "navigationItems"
+                label: "navigationItems"
+                widget: "object"
                 collapsed: true
                 fields:
                   - name: "name"
