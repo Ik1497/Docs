@@ -101,6 +101,60 @@
           }
         }
       ]
+    },
+    {
+      "type": "group",
+      "name": "Tools",
+      "groupItems": [
+        {
+          "groupItem": {
+            "icon": "mdi mdi-tools",
+            "type": "link",
+            "channel": "public",
+            "lastEdited": {
+              "date": "03/24/2023",
+              "Time": "2023-03-24T10:58:47.372Z"
+            },
+            "name": "Extensions Builder",
+            "description": "Build out all my extensions with a simple UI",
+            "href": "/Extensions-Builder/"
+          }
+        },
+        {
+          "groupItem": {
+            "icon": "mdi mdi-toolbox",
+            "type": "link",
+            "channel": "beta",
+            "lastEdited": {
+              "date": "03/24/2023",
+              "Time": "2023-03-24T10:59:31.558Z"
+            },
+            "name": "Streamer.bot Toolbox",
+            "description": "Manage your Streamer.bot instance with ease!",
+            "href": "/Streamerbot-Toolbox"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "OBS Plugins With Streamer.bot",
+      "groupItems": [
+        {
+          "groupItem": {
+            "icon": "mdi mdi-barcode",
+            "type": "link",
+            "channel": "beta",
+            "lastEdited": {
+              "date": "03/24/2023",
+              "Time": "2023-03-24T11:00:52.415Z"
+            },
+            "name": "Time Warp Scan",
+            "description": "Actions for changing setting for the Time Warp Scan OBS plugin with Streamer.bot",
+            "href": "/OBS-Plugins/Time-Warp-Scan/Docs"
+          }
+        }
+      ]
     }
   ]
 }
