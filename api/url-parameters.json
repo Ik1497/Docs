@@ -1,10 +1,12 @@
 {
   "pages": [
     {
-      "path": "progress-bar"
+      "path": "Progress-Bar",
+      "apiPath": "progress-bar"
     },
     {
-      "path": "mute-indicator"
+      "path": "Mute-Indicator",
+      "apiPath": "mute-indicator"
     }
   ]
 }
