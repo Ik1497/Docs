@@ -7,6 +7,10 @@
     {
       "path": "Mute-Indicator",
       "apiPath": "mute-indicator"
+    },
+    {
+      "apiPath": "music-widget",
+      "path": "Music-Widget"
     }
   ]
 }
