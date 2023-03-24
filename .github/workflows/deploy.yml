@@ -2,11 +2,13 @@ name: Deploy changes to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build_pages:
+  build:
     runs-on: ubuntu-latest
+    name: Build and Push
     steps:
       - name: git-checkout
         uses: actions/checkout@v2
