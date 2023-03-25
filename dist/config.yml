@@ -42,7 +42,7 @@ collections:
                   - name: "groupItem"
                     label: "Group Item"
                     widget: "object"
-                    collapsed: true
+                    collapsed: false
                     fields:
                       - name: "name"
                         label: "Name"

@@ -56,7 +56,7 @@ fs.readdir(`./docs-src/`, function (err, files) {
   files.forEach(function (file) {
     if (!file.endsWith(`.md`)) return
 
-    fs.readFile(`docs-src/${file}`, `utf8`, (err, data) => {
+    fs.readFile(`./docs-src/${file}`, `utf8`, (err, data) => {
       if (err) return
       
       data = data.replaceAll(`﻿`, ``).replaceAll(`\r`, ``)
@@ -65,7 +65,11 @@ fs.readdir(`./docs-src/`, function (err, files) {
       const metadata = converter.getMetadata()
       const htmlFileName = metadata?.path ? metadata?.path + `.html` : file
 
-      fs.writeFile(`docs/${htmlFileName}`, createPage(html, metadata), (err) => {
+      fs.mkdir('./docs', { recursive: true }, (err) => {
+        if (err) return;
+      });
+
+      fs.writeFile(`./docs/${htmlFileName}`, createPage(html, metadata), (err) => {
         if (err) return
       });
     });
