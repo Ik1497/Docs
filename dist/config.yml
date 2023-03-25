@@ -80,6 +80,12 @@ collections:
                             time_format: "HH:mm"
                             date_format: false
                             widget: "datetime"
+                      - name: "homePageIndex"
+                        label: "Home Page Index"
+                        value_type: "int"
+                        min: 0
+                        widget: "number"
+                        required: false
   - name: "extensions-builder"
     label: "Extensions Builder"
     editor:
