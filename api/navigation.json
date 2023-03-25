@@ -15,7 +15,8 @@
             },
             "name": "Home",
             "description": "Everything you NEED for streaming!",
-            "href": "/"
+            "href": "/",
+            "homePageIndex": ""
           }
         }
       ]
@@ -35,7 +36,8 @@
             },
             "name": "Local Script Actions Handler",
             "description": "Run action with Local Scripts.",
-            "href": "/Extensions/Local-Script-Action-Handler/Docs"
+            "href": "/Extensions/Local-Script-Action-Handler/Docs",
+            "homePageIndex": 4
           }
         }
       ]
@@ -55,7 +57,8 @@
             },
             "name": "Timer Widget",
             "description": "Start, pause and stop a timer with Streamer.bot",
-            "href": "/Extensions/Timer/Docs"
+            "href": "/Extensions/Timer/Docs",
+            "homePageIndex": 5
           }
         },
         {
@@ -69,7 +72,8 @@
             },
             "description": "Make an easy to set-up dynamic progress bar with Streamer.bot",
             "name": "Progress Bar v2.4",
-            "href": "/Extensions/Progress-Bar/Docs"
+            "href": "/Extensions/Progress-Bar/Docs",
+            "homePageIndex": 1
           }
         },
         {
@@ -83,7 +87,8 @@
             },
             "name": "Weather Widget",
             "description": "v2.1 | Minimal night/day animated/static weather widget, including icons for weather events like rain, thunderstorms, snow, etc.",
-            "href": "/Docs/Weather-Widget"
+            "href": "/Docs/Weather-Widget",
+            "homePageIndex": 2
           }
         },
         {
@@ -97,7 +102,8 @@
             },
             "name": "Mute Indicator",
             "description": "Mute Indicator so you can see if and what sources are muted.",
-            "href": "/Docs/Mute-Indicator"
+            "href": "/Docs/Mute-Indicator",
+            "homePageIndex": 3
           }
         }
       ]
@@ -151,7 +157,8 @@
             },
             "name": "Time Warp Scan",
             "description": "Actions for changing setting for the Time Warp Scan OBS plugin with Streamer.bot",
-            "href": "/OBS-Plugins/Time-Warp-Scan/Docs"
+            "href": "/OBS-Plugins/Time-Warp-Scan/Docs",
+            "homePageIndex": 6
           }
         }
       ]
