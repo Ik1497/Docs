@@ -85,8 +85,8 @@
               "date": "03/24/2023",
               "Time": "2023-03-24T10:53:25.635Z"
             },
-            "name": "Weather Widget",
-            "description": "v2.1 | Minimal night/day animated/static weather widget, including icons for weather events like rain, thunderstorms, snow, etc.",
+            "name": "Weather Widget v2.1",
+            "description": "Minimal night/day animated/static weather widget, including icons for weather events like rain, thunderstorms, snow, etc.",
             "href": "/Docs/Weather-Widget",
             "homePageIndex": 2
           }
