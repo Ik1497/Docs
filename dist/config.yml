@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: "git-gateway"
+  branch: "main"
 media_folder: "/docs-src/"
 public_folder: "/docs-src/"
 publish_mode: "editorial_workflow"
