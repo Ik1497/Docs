@@ -118,6 +118,10 @@ collections:
       - label: "Name"
         name: "name"
         widget: "string"
+      - label: "Public"
+        name: "public"
+        widget: "boolean"
+        default: true
       - label: "Path"
         name: "path"
         widget: "string"
