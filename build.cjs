@@ -50,6 +50,13 @@ converter.setOption(`strikethrough`, true)
 converter.setOption(`tasklists`, true)
 converter.setOption(`underline`, true)
 
+fs.mkdir('./docs', { recursive: true }, (err) => {});
+fs.mkdir('./docs/e', { recursive: true }, (err) => {});
+
+fs.writeFile(`./docs/e/index.html`, createEditorPage({}, `index`), (err) => {
+  if (err) return
+});
+
 fs.readdir(`./docs-src/`, function (err, files) {
   if (err) return
 
@@ -65,13 +72,16 @@ fs.readdir(`./docs-src/`, function (err, files) {
       const metadata = converter.getMetadata()
       const htmlFileName = metadata?.path ? metadata?.path + `.html` : file
 
-      fs.mkdir('./docs', { recursive: true }, (err) => {
-        if (err) return;
-      });
+      metadata.pageId = file.replaceAll(`.md`, ``)
 
       fs.writeFile(`./docs/${htmlFileName}`, createPage(html, metadata), (err) => {
         if (err) return
       });
+
+      fs.writeFile(`./docs/e/${htmlFileName}`, createEditorPage(metadata), (err) => {
+        if (err) return
+      });
+
     });
   });
 });
@@ -97,18 +107,47 @@ function createPage(html, metadata) {
       
       <meta property="og:description" content="${metadata?.description}">
       <meta name="description" content="${metadata?.description}">
-      
+
       <!-- Scripts -->
       <script src="/assets/js/head.js"></script>
       <script src="/assets/js/main.js" defer></script>
       
       <!-- Styles -->
-      <link rel="stylesheet" href="/assets/css/style.css">    
+      <link rel="stylesheet" href="/assets/css/style.css">
     </head>
-    <body>
+    <body data-page-id="${metadata?.pageId}">
       <main>
         ${html}
       </main>
+    </body>
+  </html>
+  `
+}
+
+function createEditorPage(metadata, type = `page`) {
+  return `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <!-- Site Meta -->
+      <meta name="og:site_name" content="Streamer.bot Actions">
+      <meta property="og:image" content="https://ik1497.github.io/assets/images/favicon.png">
+      <meta property="og:type" content="website">
+      <meta name="theme-color" content="#B80086">
+      <meta name="author" content="Ik1497">
+      
+      <!-- Page Meta -->
+      <meta property="og:title" content="Edit ${type === `page` ? metadata?.title : `Streamer.bot Actions`}">
+      <title>Edit ${type === `page` ? metadata?.title : `Streamer.bot Actions`}</title>
+      
+      <meta property="og:description" content="${type === `page` ? metadata?.description : `Edit the contents of the Streamer.bot Actions website`}">
+      <meta name="description" content="${type === `page` ? metadata?.description : `Edit the contents of the Streamer.bot Actions website`}">
+    </head>
+    <body ${type === `page` ? `data-page-id="${metadata?.pageId}" ` : ``}style="margin: 0; overflow: hidden; width: 100vw; height: 100vh;">
+      ${type === `page` ? `<iframe src="https://ik1497.netlify.app/#/collections/docs/entries/${metadata?.pageId}" style="width: 100%; height: 100%; overflow: hidden;"></iframe>` : `<iframe src="https://ik1497.netlify.app/#/collections/docs" style="width: 100%; height: 100%; overflow: hidden;"></iframe>`}
     </body>
   </html>
   `
