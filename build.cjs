@@ -70,15 +70,15 @@ fs.readdir(`./docs-src/`, function (err, files) {
       const markdown = data.split(`\n`).join(`\n`)
       const html = converter.makeHtml(markdown)
       const metadata = converter.getMetadata()
-      const htmlFileName = metadata?.path ? metadata?.path + `.html` : file
+      const htmlFileName = metadata?.path ? metadata?.path : file
 
       metadata.pageId = file.replaceAll(`.md`, ``)
 
-      fs.writeFile(`./docs/${htmlFileName}`, createPage(html, metadata), (err) => {
+      fs.writeFile(`./docs/${htmlFileName}.html`, createPage(html, metadata), (err) => {
         if (err) return
       });
 
-      fs.writeFile(`./docs/e/${htmlFileName}`, createEditorPage(metadata), (err) => {
+      fs.writeFile(`./docs/e/${htmlFileName}.html`, createEditorPage(metadata, htmlFileName), (err) => {
         if (err) return
       });
 
@@ -124,7 +124,7 @@ function createPage(html, metadata) {
   `
 }
 
-function createEditorPage(metadata, type = `page`) {
+function createEditorPage(metadata, fileName, type = `page`) {
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -148,6 +148,9 @@ function createEditorPage(metadata, type = `page`) {
     </head>
     <body ${type === `page` ? `data-page-id="${metadata?.pageId}" ` : ``}style="margin: 0; overflow: hidden; width: 100vw; height: 100vh;">
       ${type === `page` ? `<iframe src="https://ik1497.netlify.app/#/collections/docs/entries/${metadata?.pageId}" style="width: 100%; height: 100%; overflow: hidden;"></iframe>` : `<iframe src="https://ik1497.netlify.app/#/collections/docs" style="width: 100%; height: 100%; overflow: hidden;"></iframe>`}
+      <a style="position: fixed; left: 1rem; bottom: 1rem; color: black; background: none; outline: 0; border: 0; border-radius: 0; cursor: pointer;" href="../${fileName}.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.6 4.6L10.8 12l4.6-4.6L14 6l-6 6l6 6l1.4-1.4Z"/></svg>
+      </a>
     </body>
   </html>
   `
