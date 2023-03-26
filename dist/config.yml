@@ -3,12 +3,12 @@ backend:
   branch: main
 media_folder: "/docs-src/"
 public_folder: "/docs-src/"
+publish_mode: "editorial_workflow"
 collections:
   - name: "docs"
     label: "Docs"
     folder: "docs-src"
     create: true
-    publish_mode: "editorial_workflow"
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -18,7 +18,6 @@ collections:
       - { label: "Body", name: "body", widget: "text" }
   - name: "settings"
     label: "Settings"
-    publish_mode: "editorial_workflow"
     editor:
       preview: false
     files:
@@ -90,7 +89,6 @@ collections:
                         required: false
   - name: "extensions-builder"
     label: "Extensions Builder"
-    publish_mode: "editorial_workflow"
     editor:
       preview: false
     files:
@@ -111,7 +109,6 @@ collections:
   - name: "url-parameters"
     label: "URL Parameters"
     folder: "url-parameters-src"
-    publish_mode: "editorial_workflow"
     create: true
     editor:
       preview: false
