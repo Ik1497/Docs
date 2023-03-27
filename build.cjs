@@ -1,5 +1,7 @@
-const fs  = require(`fs`)
-const showdown  = require(`showdown`)
+const fs = require(`fs`)
+const showdown = require(`showdown`)
+const https = require('https');
+const { generateRequestUrl, normaliseResponse } = require('google-translate-api-browser');
 
 const classMap = {
   img: `img-400`
@@ -50,12 +52,13 @@ converter.setOption(`strikethrough`, true)
 converter.setOption(`tasklists`, true)
 converter.setOption(`underline`, true)
 
-fs.mkdir('./docs', { recursive: true }, (err) => {});
-fs.mkdir('./docs/e', { recursive: true }, (err) => {});
+const languages = [
+  `nl`,
+  `de`,
+  `es`
+]
 
-fs.writeFile(`./docs/e/index.html`, createEditorPage({}, `index`), (err) => {
-  if (err) return
-});
+createFileAndFolder(`docs/e/index.html`, createEditorPage({}, `index`))
 
 fs.readdir(`./docs-src/`, function (err, files) {
   if (err) return
@@ -74,14 +77,15 @@ fs.readdir(`./docs-src/`, function (err, files) {
 
       metadata.pageId = file.replaceAll(`.md`, ``)
 
-      fs.writeFile(`./docs/${htmlFileName}.html`, createPage(html, metadata), (err) => {
-        if (err) return
+      createFileAndFolder(`docs/${htmlFileName}.html`, createPage(html, metadata))
+      createFileAndFolder(`docs/en/${htmlFileName}.html`, createPage(html, metadata))
+      
+      languages.forEach(async function (language) {
+        // createFileAndFolder(`docs/${language}/${htmlFileName}.html`, createPage(translate(encodeURI(html), language), metadata))
       });
 
-      fs.writeFile(`./docs/e/${htmlFileName}.html`, createEditorPage(metadata, htmlFileName), (err) => {
-        if (err) return
-      });
 
+      createFileAndFolder(`docs/e/${htmlFileName}.html`, createEditorPage(metadata, htmlFileName))
     });
   });
 });
@@ -155,3 +159,41 @@ function createEditorPage(metadata, fileName, type = `page`) {
   </html>
   `
 }
+
+function createFileAndFolder(path, content) {
+  let dirs = path.split(`/`)
+  let fileName = dirs.reverse()[0]
+  dirs.reverse().pop()
+
+  let addingPath = ``
+
+  dirs.forEach((dir, dirIndex) => {
+    if (dirIndex === 0) addingPath += dir
+    if (dirIndex > 0) addingPath += `/${dir}`
+
+    fs.mkdirSync(addingPath, { recursive: true })
+  });
+
+  fs.writeFileSync(`${addingPath}/${fileName}`, content)
+}
+
+function translate(text, to) {
+  const url = generateRequestUrl(text, { to: to });
+
+  createFileAndFolder(`test/${to}`, url)
+
+  https.get(url, (resp) => {
+    let data = ``
+  
+    resp.on(`data`, (chunk) => {
+      data += chunk
+    });
+
+    resp.on(`end`, () => {
+      return normaliseResponse(JSON.parse(data))
+    });
+  }).on(`error`, (err) => {
+    return `Error:`, err.message
+  });
+}
+

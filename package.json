@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Ik1497/Docs#readme",
   "dependencies": {
+    "google-translate-api-browser": "^3.0.1",
     "showdown": "^2.1.0"
   }
 }
