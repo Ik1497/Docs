@@ -15,6 +15,10 @@
     {
       "apiPath": "weather-widget",
       "path": "Weather-Widget"
+    },
+    {
+      "apiPath": "timer-widget",
+      "path": "Timer-Widget"
     }
   ]
 }
