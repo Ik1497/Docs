@@ -1,5 +1,5 @@
 {
-  "public": true,
+  "public": false,
   "name": "Timer Widget",
   "path": "Timer-Widget",
   "baseUrl": "https://ik1497.github.io/Extensions/Timer",
