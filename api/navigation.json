@@ -53,11 +53,11 @@
             "channel": "beta",
             "lastEdited": {
               "date": "03/24/2023",
-              "Time": "2023-03-24T10:53:00.002Z"
+              "Time": "2023-03-27T09:55:43.941Z"
             },
             "name": "Timer Widget",
             "description": "Start, pause and stop a timer with Streamer.bot",
-            "href": "/Extensions/Timer/Docs",
+            "href": "/Docs/Extensions/Timer-Widget/",
             "homePageIndex": 5
           }
         },
@@ -72,7 +72,7 @@
             },
             "description": "Make an easy to set-up dynamic progress bar with Streamer.bot",
             "name": "Progress Bar v2.4",
-            "href": "/Docs/Progress-Bar",
+            "href": "/Docs/Progress-Bar/",
             "homePageIndex": 1
           }
         },
@@ -87,7 +87,7 @@
             },
             "name": "Weather Widget v2.1",
             "description": "Minimal night/day animated/static weather widget, including icons for weather events like rain, thunderstorms, snow, etc.",
-            "href": "/Docs/Weather-Widget",
+            "href": "/Docs/Weather-Widget/",
             "homePageIndex": 2
           }
         },
@@ -102,7 +102,7 @@
             },
             "name": "Mute Indicator",
             "description": "Mute Indicator so you can see if and what sources are muted.",
-            "href": "/Docs/Mute-Indicator",
+            "href": "/Docs/Mute-Indicator/",
             "homePageIndex": 3
           }
         }
