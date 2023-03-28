@@ -94,9 +94,17 @@ nav.primary-navigation {
     nav.primary-navigation {
       left: -250px;
     }
+  }
+}
 
-    nav.primary-navigation .navigation-overlay {
-      display: none;
-    }
+@media (min-width: $mq-sm) {
+  nav.primary-navigation .navigation-overlay {
+    display: none;
+  }
+}
+
+body:not([data-navigation-visible]) {
+  nav.primary-navigation .navigation-overlay {
+    display: none;
   }
 }
