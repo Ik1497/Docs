@@ -3,5 +3,6 @@
   "name": "Mute Indicator",
   "baseUrl": "https://ik1497.github.io/Extensions/Mute-Indicator/",
   "path": "mute-indicator",
-  "public": true
+  "public": true,
+  "icon": "mdi-volume-mute"
 }
