@@ -5,6 +5,8 @@ nav.primary-navigation {
   align-self: flex-start;
   position: sticky;
   top: $header-height + $header-spacing;
+  min-width: 250px;
+  max-width: 250px;
   
   .navigation-group {
     & > p {

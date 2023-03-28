@@ -1,0 +1,133 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <!-- Site Meta -->
+      <meta name="og:site_name" content="Streamer.bot Actions">
+      <meta property="og:image" content="https://ik1497.github.io/assets/images/favicon.png">
+      <link rel="icon" href="https://ik1497.github.io/assets/images/favicon.png">
+      <meta property="og:type" content="website">
+      <meta name="theme-color" content="#B80086">
+      <meta name="author" content="Ik1497">
+      
+      <!-- Page Meta -->
+      <meta property="og:title" content="Timer Widget">
+      <title>Timer Widget</title>
+      
+      <meta property="og:description" content="Mute Indicator so you can see if and what sources are muted.">
+      <meta name="description" content="Mute Indicator so you can see if and what sources are muted.">
+
+      <!-- Scripts -->
+      <script src="main.js" defer></script>
+      <script src="/components/main.js"></script>
+      
+      <!-- Styles -->
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body data-page-id="20230327015514">
+      
+  <header class="primary-header">
+    <div class="header-content">
+      <div class="main">
+        <img src="https://ik1497.github.io/assets/images/favicon.png" alt="favicon">
+        <p>Streamer.bot Actions</p>
+      </div>
+    </div>
+  </header>
+  
+      <div class="main-content">
+        <nav class="primary-navigation">
+          
+    <div class="navigation-group">
+      <p tabindex="0">General</p>
+      <ul>
+        
+      <li><a class="mdi mdi-home" href="/">Home</a></li>
+      
+      </ul>
+    </div>
+    
+    <div class="navigation-group">
+      <p tabindex="0">Extensions</p>
+      <ul>
+        
+      <li><a class="mdi mdi-script-text-play" href="/Extensions/Local-Script-Action-Handler/Docs">Local Script Actions Handler</a></li>
+      
+      </ul>
+    </div>
+    
+    <div class="navigation-group">
+      <p tabindex="0">Widgets</p>
+      <ul>
+        
+      <li><a class="mdi mdi-timer-outline" href="/Docs/Timer-Widget">Timer Widget</a></li>
+      
+      <li><a class="mdi mdi-progress-upload" href="/Docs/Progress-Bar">Progress Bar v2.4</a></li>
+      
+      <li><a class="mdi mdi-weather-lightning" href="/Docs/Weather-Widget">Weather Widget v2.1</a></li>
+      
+      <li><a class="mdi mdi-volume-mute" href="/Docs/Mute-Indicator">Mute Indicator</a></li>
+      
+      </ul>
+    </div>
+    
+    <div class="navigation-group">
+      <p tabindex="0">Tools</p>
+      <ul>
+        
+      <li><a class="mdi mdi-tools" href="/Extensions-Builder/">Extensions Builder</a></li>
+      
+      <li><a class="mdi mdi-toolbox" href="/Streamerbot-Toolbox">Streamer.bot Toolbox</a></li>
+      
+      </ul>
+    </div>
+    
+    <div class="navigation-group">
+      <p tabindex="0">OBS Plugins With Streamer.bot</p>
+      <ul>
+        
+      <li><a class="mdi mdi-barcode" href="/OBS-Plugins/Time-Warp-Scan/Docs">Time Warp Scan</a></li>
+      
+      </ul>
+    </div>
+    
+        </nav>
+        
+        <main>
+          <h1>Timer Widget</h1>
+          <h2>Actions Import</h2>
+<p><i-sb-import-loader import-name="Timer">TlM0RR+LCAAAAAAABADtWNtu20YQfS/QfxD8lABZY2+8bNAUsOlaFt0olWRJtKo87I004xXJkqIcOc2/d0XZiCzHQQIUrmtbAEVyZ2b3zHDnzJCffv6p1dpZ6LJK82zndQu/agYyPtP2bgeAX1on6UyXrXGqEj1vLdAu3IWtF2LZSs8RZd7L1q8A7KytuJzbWSpr+OfqvtX6tD5ZUapW0zHsC41cD2CMHEAFxUAQwYEXE8h8hlQsnfVcjdFfta5XMLLamC+jOuPC6NV887LWG+MfpamVPizz2VFazfNyaVVibqoNnWu/1j79wetKt/6+4eHG8kmZ18UPR6Ex5eaCL6t+nd2GUPJM5bO9JlS3pTLPZF2WOpvflt0K740Q/7B/jYHSlSzT4grMzpb0XOtiz6QLfQvM2hUdawtV6i1MjTB4PZ2OU+vrRTWdvk1lmVd5PN/t/nYynR6WFudFXp67dDpdUBtMAgli0+msknlpUrGrjNnZnPD9zZXFcq6DXDW+qqhbiJlMhsRcqvZo/u4CHh/0igs1Dis+fpuc4o9nkrxNemi/Mxg7dswxVu4d9PJQHo1S0TYfOu1wIfBF0o/OzCkZwckgKVZybecKeuZg+FtSj/AolZh94HgEe1m4OB33P5xGXTjIuguRJqleKsLH/WwS9bJ36V6m2mY+iTrZ78GeHZsYkfWHOto34WWehGT/zOI2IYHp8UnVDZLzUM5GUEVh3TnqL9V42OCLe/B4dWw9l6LUMp8VqbnjwSht+HIw5+XtXdTIK77QfV3VZn6Sj3iZrhLqbs0bOttbZJ3YSmEMHe0AHxEIKI8RYMyTQLjYiylD0Iu9LcMLnSZnK3w2k25K5stitRJb/W5KrjPyBiE0kjtIYQ0xU/rjaqEvo5+vL99vp1d7tUSzn99vZqUxvKi02pCuhZ9ffZ3pfOo7joo5kDFGgCLPhoYyBVjscsxc6GGH3CPTNXvhETPdt/1rDJ6Z7nuY7lIdhc0ak6PR8jTqFwLTpHMAk9MozCSq0o3xNBo4Q4G6UM5MPVkmxRpPHgbDbm8QONFkHF4K3C0nUT+QM3Y2aXctvv6xZdH6OAi9kKhi0lZGBdLtBAryMTIylZW9Nmo2qtVh35HtYcOm1u5MZr01m37B0Mg66V7ZafeRnB3aOVjdCaqkkyrWSc8b34MoNMraiHQfymxkVjiDCHaDzB7JmzcPnV0JQV7sEAaYJLZtgtwBIo41cLWG1Ef2Ern/Irtug/gebkUb3PrqrpxdXDnavcpdVZe8ycdXW2qmIUO0hZzX8/xkjf4rQNZ1CCvi+wIDzCkHNPZj4HvcBbEijvCFElbhRyOFMPm/ViEmiGbUFYAzW5spdxzA3VgChxEdQ5cQ51777cE8Lx51EfqGe43+cw36j7rtLhRkL4sHnaZG2TWWtibZekETW+/QpOnADbM47ZE/+Hrgexoq5jCAbZNtWU4rwKHtMJVLOVckjqGPn1S37ULuKgpdwCDybbetJWA+Y0BjGxyuPUT1fXbbJ3mSGP0kPy+0XgR5sXx5dXqmv4dBf/3FBKtqEj2ujw4IU+JwjwCG7B/1lASC26yH2KMYMYKZI54UDUrqCC44BC7F1L4nKAH8GBOgfehx5HCFCL1HGhxmxdNlwGfqexjUN6pl+xBJPHw03R9T1I+Jg4B978eAEuHYtsdyH3Sw6xEKGVHx46S91WmtueauDVNrNpvZxL/W//wPeDD2odkaAAA=</i-sb-import-loader></p>
+<h2>Installation</h2>
+<p>In Streamer.bot select <code>Import</code> in the top left.
+Drag and Drop the <code>Import File</code> into the <code>Import String</code>.</p>
+<p><img class="img-400"  src="/Extensions/Timer/installation.png" alt="Preview of the installation" /></p>
+<h2>Configuration</h2>
+<h3>Streamer.bot</h3>
+<ol>
+<li>Make sure you've imported the import code <a href="#installation">above</a>.</li>
+<li>Trigger the actions to start, stop, pause, unpause or toggle pause</li>
+</ol>
+<h3>OBS Studio</h3>
+<ol>
+<li>Make a browser source in OBS Studio with the settings: <code>Width = 1920</code>, <code>Height = 1080</code>.</li>
+<li>Put the URL of the widget in the Browser Source, find URL <a href="#widget">here</a>.</li>
+</ol>
+<h2>Widget</h2>
+<p>Put this URL into OBS: <a href="https://ik1497.github.io/Extensions/Timer/" rel="noopener noreferrer" target="_blank">https://ik1497.github.io/Extensions/Timer/</a></p>
+<p><img class="img-400"  src="/Extensions/Timer/overview.gif" alt="Overview GIF of the widget" /></p>
+<h2>URL Parameters</h2>
+<p><i-button-grid><i-button-grid-item data-name="Customize with URL Parameters" data-description="Find the URL Parameters of this widget on this website" data-icon="mdi:google-chrome" data-link="/Extensions-Builder/"></i-button-grid-item></i-button-grid></p>
+<p>This example image below uses:</p>
+<p><code>https://ik1497.github.io/Extensions/Timer?timer-background=linear-gradient(90deg, red, blue)&amp;timer-border-radius=0.2em&amp;timer-padding=0.5em</code></p>
+<p><img class="img-400"  src="/Extensions/Timer/overview-url-parameters.png" alt="URL Parameters example from the timer" /></p>
+<hr />
+<p>For any suggestions about this widget or any theme feel free to send me a DM on discord or open an <a href="/Links/Issues" rel="noopener noreferrer" target="_blank">issue</a>.</p>
+        </main>
+      </div>
+    </body>
+  </html>
+  

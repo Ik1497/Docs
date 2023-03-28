@@ -3,7 +3,7 @@
 .main-content {
   padding-top: $header-height + $header-spacing;
   display: grid;
-  grid-template-columns: 250px $max-width - 250px;
+  grid-template-columns: minmax(250px, 250px) minmax(500px, $max-width - 250px);
   gap: 1rem;
   max-width: $max-width;
   padding-inline: $inline-spacing;
