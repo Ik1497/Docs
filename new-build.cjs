@@ -125,6 +125,7 @@ async function createPage(html, metadata, path) {
       <!-- Site Meta -->
       <meta name="og:site_name" content="Streamer.bot Actions">
       <meta property="og:image" content="https://ik1497.github.io/assets/images/favicon.png">
+      <link rel="icon" href="https://ik1497.github.io/assets/images/favicon.png">
       <meta property="og:type" content="website">
       <meta name="theme-color" content="#B80086">
       <meta name="author" content="Ik1497">
@@ -138,6 +139,7 @@ async function createPage(html, metadata, path) {
 
       <!-- Scripts -->
       <script src="main.js" defer></script>
+      <script src="/components/main.js"></script>
       
       <!-- Styles -->
       <link rel="stylesheet" href="style.css">
@@ -187,6 +189,7 @@ function createEditorPage(metadata, fileName, type = `page`) {
       <!-- Site Meta -->
       <meta name="og:site_name" content="Streamer.bot Actions">
       <meta property="og:image" content="https://ik1497.github.io/assets/images/favicon.png">
+      <link rel="icon" href="https://ik1497.github.io/assets/images/favicon.png">
       <meta property="og:type" content="website">
       <meta name="theme-color" content="#B80086">
       <meta name="author" content="Ik1497">
