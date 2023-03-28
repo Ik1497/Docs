@@ -67,3 +67,12 @@ a:not([class]) {
     text-decoration: underline;
   }
 }
+
+/***********
+** IMAGES **
+************/
+
+img.img-400 {
+  max-width: 400px;
+  width: 100%;
+}
