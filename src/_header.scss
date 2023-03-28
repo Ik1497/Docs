@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "breakpoints" as *;
 
 header.primary-header {
   border-bottom: 2px solid $background-alt;
@@ -13,6 +14,24 @@ header.primary-header {
   justify-content: center;
   align-items: center;
   z-index: 100;
+
+  .navigation-button {
+    background: none;
+    color: $color-900;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+
+    @media (min-width: $mq-sm) {
+      display: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $color-700;
+    }
+  }
   
   .header-content {
     max-width: $max-width;

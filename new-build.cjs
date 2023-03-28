@@ -59,6 +59,8 @@ const languages = [
 
 createFileAndFolder(`docs/e/index.html`, createEditorPage({}, `index`))
 
+fs.copyFileSync(`src/main.js`, `docs/main.js`)
+
 fs.readdir(`./docs-src/`, function (err, files) {
   if (err) return
 
@@ -145,7 +147,7 @@ async function createPage(html, metadata, path) {
 
       <!-- Scripts -->
       <script src="main.js" defer></script>
-      <script src="/components/main.js"></script>
+      <script src="https://ik1497.github.io/components/main.js"></script>
       
       <!-- Styles -->
       <link rel="stylesheet" href="style.css">
@@ -154,7 +156,10 @@ async function createPage(html, metadata, path) {
       ${createHeader()}
       <div class="main-content">
         <nav class="primary-navigation">
-          ${navigationHtml}
+          <div class="navigation-overlay"></div>
+          <div class="navigation-content">
+            ${navigationHtml}
+          </div>
         </nav>
         ${createToc()}
         <main>
@@ -173,6 +178,7 @@ function createHeader() {
   <header class="primary-header">
     <div class="header-content">
       <div class="main">
+        <button class="navigation-button mdi mdi-menu"></button>
         <img src="https://ik1497.github.io/assets/images/favicon.png" alt="favicon">
         <p>Streamer.bot Actions</p>
       </div>
