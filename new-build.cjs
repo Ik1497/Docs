@@ -97,21 +97,27 @@ async function createPage(html, metadata, path) {
 
   navigation.navigationItems.forEach(navigationGroup => {
     let navGroupHtml = ``
+
     navigationGroup.groupItems.forEach(navGroupItem => {
       navGroupItem = navGroupItem.groupItem
+
+      if (navGroupItem.channel != `public`) return
+
       navGroupHtml += `
       <li><a class="${navGroupItem.icon}" href="${navGroupItem.href}">${navGroupItem.name}</a></li>
       `
     });
 
-    navigationHtml += `
-    <div class="navigation-group">
-      <p tabindex="0">${navigationGroup.name}</p>
-      <ul>
-        ${navGroupHtml}
-      </ul>
-    </div>
-    `
+    if (navGroupHtml != ``) {
+      navigationHtml += `
+      <div class="navigation-group">
+        <p tabindex="0">${navigationGroup.name}</p>
+        <ul>
+          ${navGroupHtml}
+        </ul>
+      </div>
+      `
+    }
   });
 
   createFileAndFolder(path, `
