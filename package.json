@@ -7,7 +7,7 @@
     "old-build": "node build.cjs",
     "build": "node new-build.cjs",
     "dev": "sass --watch src:docs --style compressed",
-    "deploy": "git commit -a -m \"Build\" && git push",
+    "deploy": "git pull && git commit -a -m \"Build\" && git push",
     "pull": "git pull"
   },
   "repository": {
