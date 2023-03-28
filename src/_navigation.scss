@@ -1,0 +1,44 @@
+@use "variables" as *;
+
+nav.primary-navigation {
+  font-size: .9rem;
+  align-self: flex-start;
+  position: sticky;
+  top: $header-height + $header-spacing;
+  
+  .navigation-group {
+    & > p {
+
+    }
+
+    & > ul {
+      list-style: none;
+      padding-left: .5rem;
+
+      li a {
+        padding-left: .5rem;
+        border-left: 1px solid $background-soft;
+        color: $color-900;
+        text-decoration: none;
+        padding-block: .25rem;
+        display: block;
+        width: fit-content;
+
+        &::before {
+          padding-right: .25rem;
+        }
+
+        &:hover,
+        &:focus-visible {
+          border-color: $background-light;
+          color: $anchor-hover;
+        }
+
+        &.active {
+          color: $anchor;
+          border-color: $anchor;
+        }
+      }
+    }
+  }
+}

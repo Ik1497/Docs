@@ -1,0 +1,14 @@
+@use "variables" as *;
+
+ol {
+  list-style: none;
+  counter-reset: ol;
+
+  li {
+    counter-increment: ol;
+
+    &::before {
+      content: counter(ol) ". ";
+    }
+  }
+}

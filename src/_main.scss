@@ -1,0 +1,10 @@
+@use "variables" as *;
+
+.main-content {
+  padding-top: $header-height + $header-spacing;
+  display: grid;
+  grid-template-columns: minmax(250px, 250px) minmax(320px, 1fr);
+  gap: 1rem;
+  max-width: $max-width;
+  padding-inline: $inline-spacing;
+}

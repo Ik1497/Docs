@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+header.primary-header {
+  border-bottom: 2px solid $background-alt;
+  height: $header-height;
+  width: 100%;
+  position: fixed;
+  background: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .header-content {
+    max-width: $max-width;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: $inline-spacing;
+
+    .main {
+      display: flex;
+      gap: .5rem;
+      font-weight: bold;
+      align-items: center;
+  
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      p {
+        padding: 0;
+      }
+    }
+  }
+}
