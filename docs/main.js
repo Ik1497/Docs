@@ -7,6 +7,11 @@ document.querySelector(`nav.primary-navigation .navigation-overlay`).addEventLis
   document.body.removeAttribute(`data-navigation-visible`)
 })
 
+document.querySelector(`nav.primary-navigation .navigation-close-button`).addEventListener(`click`, () => {
+  document.body.setAttribute(`data-navigation-visible`, ``)
+  document.body.removeAttribute(`data-navigation-visible`)
+})
+
 window.addEventListener(`keydown`, (e) => {
   console.log(e)
   switch (e.key) {

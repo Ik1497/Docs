@@ -16,6 +16,7 @@ nav.primary-navigation {
     bottom: 0;
     left: 0;
     z-index: 101;
+    transition: left 250ms ease;
     
     .navigation-content {
       background: $background;
@@ -31,6 +32,28 @@ nav.primary-navigation {
     inset: 0;
     background: hsla(0 0% 0% / .2);
     z-index: -1;
+  }
+
+  .navigation-close-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: none;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    color: $color-900;
+    padding-block: .75rem;
+    cursor: pointer;
+
+    &:hover {
+      background: $background-light;
+    }
+    
+    @media (min-width: $mq-sm) {
+      display: none;
+    }
   }
   
   .navigation-group {
@@ -69,6 +92,10 @@ nav.primary-navigation {
 @media (max-width: $mq-sm) {
   body:not([data-navigation-visible]) {
     nav.primary-navigation {
+      left: -250px;
+    }
+
+    nav.primary-navigation .navigation-overlay {
       display: none;
     }
   }

@@ -160,6 +160,7 @@ async function createPage(html, metadata, path) {
           <div class="navigation-content">
             ${navigationHtml}
           </div>
+          <button class="navigation-close-button">Close</button>
         </nav>
         ${createToc()}
         <main>
