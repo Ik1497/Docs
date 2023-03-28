@@ -78,8 +78,8 @@ fs.readdir(`./docs-src/`, function (err, files) {
 
       metadata.pageId = file.replaceAll(`.md`, ``)
 
-      createPage(html, metadata, `docs/${htmlFileName}.html`)
-      createPage(html, metadata, `docs/en/${htmlFileName}.html`)
+      createPage(html, metadata, `docs/${htmlFileName}.html`, `/Docs/${metadata?.path}`)
+      createPage(html, metadata, `docs/en/${htmlFileName}.html`, `/Docs/${metadata?.path}`)
       
       languages.forEach(async function (language) {
         // createFileAndFolder(`docs/${language}/${htmlFileName}.html`, createPage(translate(encodeURI(html), language), metadata))
@@ -91,7 +91,7 @@ fs.readdir(`./docs-src/`, function (err, files) {
   });
 });
 
-async function createPage(html, metadata, path) {
+async function createPage(html, metadata, path, navPath) {
   let navigation = await fetch(`https://raw.githubusercontent.com/Ik1497/Docs/main/api/navigation.json`)
   navigation = await navigation.json()
 
@@ -106,7 +106,7 @@ async function createPage(html, metadata, path) {
       if (navGroupItem.channel != `public`) return
 
       navGroupHtml += `
-      <li><a class="${navGroupItem.icon}" href="${navGroupItem.href}">${navGroupItem.name}</a></li>
+      <li><a class="${navGroupItem.icon}${navPath === navGroupItem.href ? ` active` : ``}" href="${navGroupItem.href}">${navGroupItem.name}</a></li>
       `
     });
 

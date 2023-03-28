@@ -13,7 +13,6 @@ document.querySelector(`nav.primary-navigation .navigation-close-button`).addEve
 })
 
 window.addEventListener(`keydown`, (e) => {
-  console.log(e)
   switch (e.key) {
     case `Escape`:
     case `Enter`:
