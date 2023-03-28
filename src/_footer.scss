@@ -1,0 +1,12 @@
+@use "variables" as *;
+
+footer.primary-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background: $background;
+  border-top: 2px solid $background-alt;
+  height: $header-height;
+}

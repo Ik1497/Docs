@@ -156,6 +156,7 @@ async function createPage(html, metadata, path) {
           ${html}
         </main>
       </div>
+      <footer class="primary-footer"r>© 2022-${new Date().getFullYear()} Streamer.bot Actions. All rights reserved.</footer>
     </body>
   </html>
   `)
