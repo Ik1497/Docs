@@ -3,5 +3,6 @@
   "name": "Progress Bar",
   "baseUrl": "https://ik1497.github.io/Extensions/Progress-Bar/",
   "path": "progress-bar",
-  "public": true
+  "public": true,
+  "icon": "mdi-progress-upload"
 }
