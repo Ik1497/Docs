@@ -3,5 +3,6 @@
   "name": "Weather Widget",
   "path": "weather-widget",
   "baseUrl": "https://ik1497.github.io/Extensions/Weather/",
-  "public": true
+  "public": true,
+  "icon": "mdi-weather-lightning"
 }
