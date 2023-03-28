@@ -1,7 +1,6 @@
 const fs = require(`fs`)
 const showdown = require(`showdown`)
 const https = require('https');
-const { generateRequestUrl, normaliseResponse } = require('google-translate-api-browser');
 
 const classMap = {
   img: `img-400`
