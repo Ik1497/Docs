@@ -13,3 +13,7 @@
     grid-template-columns: 1fr;
   }
 }
+
+main {
+  max-width: calc(100vw - 4rem);
+}
