@@ -35,8 +35,8 @@
               "Time": "2023-03-26T09:27:51.036Z"
             },
             "name": "Local Script Actions Handler",
-            "description": "Run action with Local Scripts.",
-            "href": "/Extensions/Local-Script-Action-Handler/Docs",
+            "description": "Run action with Local Scripts",
+            "href": "/Docs/Local-Script-Action-Handler",
             "homePageIndex": 4
           }
         }
