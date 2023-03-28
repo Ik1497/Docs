@@ -76,3 +76,12 @@ img.img-400 {
   max-width: 600px;
   width: 100%;
 }
+
+/*******
+** HR **
+********/
+
+hr {
+  margin-block: 1.5rem;
+  border: 1px inset hsl(0 100% 100% / .1);
+}
