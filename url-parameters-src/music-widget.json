@@ -3,5 +3,6 @@
   "name": "Music Widget",
   "baseUrl": "https://ik1497.github.io/Extensions/Music/",
   "path": "music-widget",
-  "public": false
+  "public": false,
+  "icon": "mdi-spotify"
 }
