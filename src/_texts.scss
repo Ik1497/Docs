@@ -47,9 +47,9 @@ h6 {
 ** SPACING **
 *************/
 
-p,
-ol,
-ul {
+p:not([class]),
+ol:not([class]),
+ul:not([class]) {
   padding-bottom: .5em;
 }
 

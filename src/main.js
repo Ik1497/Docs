@@ -12,6 +12,12 @@ document.querySelector(`nav.primary-navigation .navigation-close-button`).addEve
   document.body.removeAttribute(`data-navigation-visible`)
 })
 
+document.querySelectorAll(`img`).forEach(img => {
+  img.addEventListener(`click`, () => {
+    createModal(`<img src="${img.src}" alt="${img.alt}" style="width: 100%; max-width: 100%;">`, `Image Inspector`, img.alt, `large`)
+  })
+})
+
 window.addEventListener(`keydown`, (e) => {
   switch (e.key) {
     case `Escape`:
