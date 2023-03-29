@@ -1,5 +1,9 @@
 @use "variables" as *;
 
+* {
+  box-sizing: border-box;
+}
+
 ol {
   list-style: none;
   counter-reset: ol;
