@@ -36,7 +36,7 @@
             },
             "name": "Local Script Actions Handler",
             "description": "Run action with Local Scripts",
-            "href": "/Docs/Local-Script-Action-Handler",
+            "href": "/Docs/Extensions/Local-Script-Action-Handler",
             "homePageIndex": 4
           }
         }
@@ -57,7 +57,7 @@
             },
             "name": "Timer Widget",
             "description": "Start, pause and stop a timer with Streamer.bot",
-            "href": "/Docs/Timer-Widget",
+            "href": "/Docs/Widgets/Timer-Widget",
             "homePageIndex": 5
           }
         },
@@ -72,7 +72,7 @@
             },
             "description": "Make an easy to set-up dynamic progress bar with Streamer.bot",
             "name": "Progress Bar v2.4",
-            "href": "/Docs/Progress-Bar",
+            "href": "/Docs/Widgets/Progress-Bar",
             "homePageIndex": 1
           }
         },
@@ -87,7 +87,7 @@
             },
             "name": "Weather Widget v2.1",
             "description": "Minimal night/day animated/static weather widget, including icons for weather events like rain, thunderstorms, snow, etc.",
-            "href": "/Docs/Weather-Widget",
+            "href": "/Docs/Widgets/Weather-Widget",
             "homePageIndex": 2
           }
         },
@@ -102,7 +102,7 @@
             },
             "name": "Mute Indicator",
             "description": "Mute Indicator so you can see if and what sources are muted.",
-            "href": "/Docs/Mute-Indicator",
+            "href": "/Docs/Widgets/Mute-Indicator",
             "homePageIndex": 3
           }
         }
