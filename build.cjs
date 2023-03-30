@@ -1,7 +1,6 @@
 const fs = require(`fs`)
 const showdown = require(`showdown`)
 const https = require('https');
-const { generateRequestUrl, normaliseResponse } = require('google-translate-api-browser');
 
 const classMap = {
   img: `img-400`
@@ -60,6 +59,9 @@ const languages = [
 
 createFileAndFolder(`docs/e/index.html`, createEditorPage({}, `index`))
 
+fs.copyFileSync(`src/main.js`, `docs/main.js`)
+fs.copyFileSync(`src/style.css`, `docs/style.css`)
+
 fs.readdir(`./docs-src/`, function (err, files) {
   if (err) return
 
@@ -77,12 +79,12 @@ fs.readdir(`./docs-src/`, function (err, files) {
 
       metadata.pageId = file.replaceAll(`.md`, ``)
 
-      createFileAndFolder(`docs/${htmlFileName}.html`, createPage(html, metadata))
-      createFileAndFolder(`docs/en/${htmlFileName}.html`, createPage(html, metadata))
+      createPage(html, metadata, `docs/${metadata?.directory}/${htmlFileName}.html`, `/Docs/${metadata?.path}`)
+      createPage(html, metadata, `docs/en/${metadata?.directory}/${htmlFileName}.html`, `/Docs/${metadata?.path}`)
       
-      languages.forEach(async function (language) {
-        // createFileAndFolder(`docs/${language}/${htmlFileName}.html`, createPage(translate(encodeURI(html), language), metadata))
-      });
+      // languages.forEach(async function (language) {
+      //    createFileAndFolder(`docs/${language}/${htmlFileName}.html`, createPage(translate(encodeURI(html), language), metadata))
+      // });
 
 
       createFileAndFolder(`docs/e/${htmlFileName}.html`, createEditorPage(metadata, htmlFileName))
@@ -90,8 +92,39 @@ fs.readdir(`./docs-src/`, function (err, files) {
   });
 });
 
-function createPage(html, metadata) {
-  return `<!DOCTYPE html>
+async function createPage(html, metadata, path, navPath) {
+  let navigation = await fetch(`https://raw.githubusercontent.com/Ik1497/Docs/main/api/navigation.json`)
+  navigation = await navigation.json()
+
+  let navigationHtml = ``
+
+  navigation.navigationItems.forEach(navigationGroup => {
+    let navGroupHtml = ``
+
+    navigationGroup.groupItems.forEach(navGroupItem => {
+      navGroupItem = navGroupItem.groupItem
+
+      if (navGroupItem.channel != `public`) return
+
+      navGroupHtml += `
+      <li><a class="${navGroupItem.icon}${navPath === navGroupItem.href ? ` active` : ``}" href="${navGroupItem.href}">${navGroupItem.name}</a></li>
+      `
+    });
+
+    if (navGroupHtml != ``) {
+      navigationHtml += `
+      <div class="navigation-group">
+        <p tabindex="0">${navigationGroup.name}</p>
+        <ul>
+          ${navGroupHtml}
+        </ul>
+      </div>
+      `
+    }
+  });
+
+  createFileAndFolder(path, `
+  <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8">
@@ -101,6 +134,7 @@ function createPage(html, metadata) {
       <!-- Site Meta -->
       <meta name="og:site_name" content="Streamer.bot Actions">
       <meta property="og:image" content="https://ik1497.github.io/assets/images/favicon.png">
+      <link rel="icon" href="https://ik1497.github.io/assets/images/favicon.png">
       <meta property="og:type" content="website">
       <meta name="theme-color" content="#B80086">
       <meta name="author" content="Ik1497">
@@ -113,19 +147,50 @@ function createPage(html, metadata) {
       <meta name="description" content="${metadata?.description}">
 
       <!-- Scripts -->
-      <script src="/assets/js/head.js"></script>
-      <script src="/assets/js/main.js" defer></script>
+      <script src="main.js" defer></script>
+      <script src="https://ik1497.github.io/components/main.js"></script>
       
       <!-- Styles -->
-      <link rel="stylesheet" href="/assets/css/style.css">
+      <link rel="stylesheet" href="style.css">
     </head>
     <body data-page-id="${metadata?.pageId}">
-      <main>
-        ${html}
-      </main>
+      ${createHeader()}
+      <div class="main-content">
+        <nav class="primary-navigation">
+          <div class="navigation-overlay"></div>
+          <div class="navigation-content">
+            ${navigationHtml}
+          </div>
+          <button class="navigation-close-button">Close</button>
+        </nav>
+        ${createToc()}
+        <main>
+          <h1>${metadata?.title}</h1>
+          ${html}
+        </main>
+      </div>
+      <footer class="primary-footer"r>© 2022-${new Date().getFullYear()} Streamer.bot Actions. All rights reserved.</footer>
     </body>
   </html>
+  `)
+}
+
+function createHeader() {
+  return `
+  <header class="primary-header">
+    <div class="header-content">
+      <div class="main">
+        <button class="navigation-button mdi mdi-menu"></button>
+        <img src="https://ik1497.github.io/assets/images/favicon.png" alt="favicon">
+        <p>Streamer.bot Actions</p>
+      </div>
+    </div>
+  </header>
   `
+}
+
+function createToc() {
+  return ``
 }
 
 function createEditorPage(metadata, fileName, type = `page`) {
@@ -139,6 +204,7 @@ function createEditorPage(metadata, fileName, type = `page`) {
       <!-- Site Meta -->
       <meta name="og:site_name" content="Streamer.bot Actions">
       <meta property="og:image" content="https://ik1497.github.io/assets/images/favicon.png">
+      <link rel="icon" href="https://ik1497.github.io/assets/images/favicon.png">
       <meta property="og:type" content="website">
       <meta name="theme-color" content="#B80086">
       <meta name="author" content="Ik1497">

@@ -4,9 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "old-build": "node build.cjs",
-    "build": "node new-build.cjs",
-    "dev": "sass --watch src:docs --style compressed",
+    "build": "node build.cjs",
+    "dev": "sass --watch src --style compressed",
     "deploy": "git pull && git commit -a -m \"Build\" && git push",
     "pull": "git pull"
   },
