@@ -79,8 +79,8 @@ fs.readdir(`./docs-src/`, function (err, files) {
 
       metadata.pageId = file.replaceAll(`.md`, ``)
 
-      createPage(html, metadata, `docs/${metadata?.directory}/${htmlFileName}.html`, `/Docs/${metadata?.path}`)
-      createPage(html, metadata, `docs/en/${metadata?.directory}/${htmlFileName}.html`, `/Docs/${metadata?.path}`)
+      createPage(html, metadata, `docs/${metadata?.directory}/${htmlFileName}.html`, `/Docs/${metadata?.directory}/${htmlFileName}`)
+      createPage(html, metadata, `docs/en/${metadata?.directory}/${htmlFileName}.html`, `/Docs/${metadata?.directory}/${htmlFileName}`)
       
       // languages.forEach(async function (language) {
       //    createFileAndFolder(`docs/${language}/${htmlFileName}.html`, createPage(translate(encodeURI(html), language), metadata))
