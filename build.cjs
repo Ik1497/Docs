@@ -147,11 +147,11 @@ async function createPage(html, metadata, path, navPath) {
       <meta name="description" content="${metadata?.description}">
 
       <!-- Scripts -->
-      <script src="main.js" defer></script>
+      <script src="../main.js" defer></script>
       <script src="https://ik1497.github.io/components/main.js"></script>
       
       <!-- Styles -->
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="../style.css">
     </head>
     <body data-page-id="${metadata?.pageId}">
       ${createHeader()}
