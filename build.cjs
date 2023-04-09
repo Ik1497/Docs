@@ -17,19 +17,14 @@ const customClassExt = {
   type: `output`,
   filter: function (text) {
     return text
-      // Add class for list (ol, ul)
-      .replace(/<p>\[\.([a-z0-9A-Z\s]+)\]<\/p>[\n]?<(.+)>/g, `<$2 class="$1">`)
-    
-      // Add class for other blocks
-      .replace(/<(.+)>\[\.([a-z0-9A-Z\s]+)\]/g, `<$1 class="$2">`)
-      
-      // Prevent class name with 2 dashs being replace by `<em>` tag
+      .replace(/<(.+)>(.+)\{\.([a-z0-9A-Z\s]+)\}/g, `<$1 class="$3">$2`) // Miscellaneous
+      .replace(/<p>\{\.([a-z0-9A-Z\s]+)\}<\/p>[\n]?<(.+)>/g, `<$2 class="$1">`) // ol, ul
       .replace(/class="(.+)"/g, function (str) {
           if (str.indexOf("<em>") !== -1) {
               return str.replace(/<[/]?em>/g, '_');
           }
           return str;
-      });
+      }); // Prevent class name with 2 dashs being replace by `<em>` tag
   }
 };
 
@@ -85,7 +80,6 @@ fs.readdir(`./docs-src/`, function (err, files) {
       // languages.forEach(async function (language) {
       //    createFileAndFolder(`docs/${language}/${htmlFileName}.html`, createPage(translate(encodeURI(html), language), metadata))
       // });
-
 
       createFileAndFolder(`docs/e/${htmlFileName}.html`, createEditorPage(metadata, htmlFileName))
     });
@@ -262,4 +256,3 @@ function translate(text, to) {
     return `Error:`, err.message
   });
 }
-
