@@ -27,21 +27,6 @@
       "groupItems": [
         {
           "groupItem": {
-            "icon": "mdi mdi-script-text-play",
-            "type": "link",
-            "channel": "public",
-            "lastEdited": {
-              "date": "03/24/2023",
-              "Time": "2023-03-26T09:27:51.036Z"
-            },
-            "name": "Local Script Actions Handler",
-            "description": "Run action with Local Scripts",
-            "href": "/Docs/Extensions/Local-Script-Action-Handler",
-            "homePageIndex": 5
-          }
-        },
-        {
-          "groupItem": {
             "icon": "mdi mdi-format-text-rotation-none",
             "type": "link",
             "channel": "public",
@@ -53,6 +38,21 @@
             "description": "Split a string at a specific character in multiple variables",
             "href": "/Docs/Extensions/Split-at-Character",
             "homePageIndex": 1
+          }
+        },
+        {
+          "groupItem": {
+            "icon": "mdi mdi-script-text-play",
+            "type": "link",
+            "channel": "public",
+            "lastEdited": {
+              "date": "03/24/2023",
+              "Time": "2023-03-26T09:27:51.036Z"
+            },
+            "name": "Local Script Actions Handler",
+            "description": "Run action with Local Scripts",
+            "href": "/Docs/Extensions/Local-Script-Action-Handler",
+            "homePageIndex": 5
           }
         }
       ]
