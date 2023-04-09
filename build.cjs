@@ -107,7 +107,7 @@ async function createPage(html, metadata, path, navPath) {
       if (navGroupItem.channel != `public`) return
 
       navGroupHtml += `
-      <li><a class="${navGroupItem.icon}${navPath === navGroupItem.href ? ` active` : ``}" href="${navGroupItem.href}">${navGroupItem.name}</a></li>
+      <li class="navigation-list-item"><a class="${navGroupItem.icon}${navPath === navGroupItem.href ? ` active` : ``}" href="${navGroupItem.href}">${navGroupItem.name}</a></li>
       `
     });
 
@@ -115,7 +115,7 @@ async function createPage(html, metadata, path, navPath) {
       navigationHtml += `
       <div class="navigation-group">
         <p tabindex="0">${navigationGroup.name}</p>
-        <ul>
+        <ul class="navigation-list">
           ${navGroupHtml}
         </ul>
       </div>
