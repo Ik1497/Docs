@@ -17,10 +17,10 @@ ol {
   }
 }
 
-ul {
+ul:not([class]) {
   list-style: none;
 
-  li::before {
+  li:not([class])::before {
     content: "- ";
   }
 }
