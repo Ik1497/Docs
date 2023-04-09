@@ -29,7 +29,7 @@
           "groupItem": {
             "icon": "mdi mdi-format-text-rotation-none",
             "type": "link",
-            "channel": "public",
+            "channel": "beta",
             "lastEdited": {
               "date": "04/09/2023",
               "Time": "2023-04-09T00:07:37.797Z"
@@ -37,7 +37,7 @@
             "name": "Split at Character",
             "description": "Split a string at a specific character in multiple variables",
             "href": "/Docs/Extensions/Split-at-Character",
-            "homePageIndex": 1
+            "homePageIndex": 6
           }
         },
         {
@@ -52,7 +52,7 @@
             "name": "Local Script Actions Handler",
             "description": "Run action with Local Scripts",
             "href": "/Docs/Extensions/Local-Script-Action-Handler",
-            "homePageIndex": 5
+            "homePageIndex": 1
           }
         }
       ]
