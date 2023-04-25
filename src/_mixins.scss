@@ -1,0 +1,18 @@
+@use "variables" as *;
+
+@mixin blockquote($background, $color, $icon) {
+  background: $background;
+  margin-bottom: 1rem;
+  color: $color;
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+
+  &::before {
+    content: "#{$icon}";
+    font-family: 'Material Design Icons';
+    padding-inline: 0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+}
