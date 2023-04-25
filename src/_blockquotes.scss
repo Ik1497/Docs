@@ -1,22 +1,22 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-blockquote, blockquote p {
+blockquote p {
   @include blockquote($state-default-background, $state-default-color, $state-default-icon);
 }
 
-blockquote.success, blockquote .success {
+blockquote .success {
   @include blockquote($state-success-background, $state-success-color, $state-success-icon);
 }
 
-blockquote.info, blockquote .info {
+blockquote .info {
   @include blockquote($state-info-background, $state-info-color, $state-info-icon);
 }
 
-blockquote.warning, blockquote .warning {
+blockquote .warning {
   @include blockquote($state-warning-background, $state-warning-color, $state-warning-icon);
 }
 
-blockquote.error, blockquote .error {
+blockquote .error {
   @include blockquote($state-error-background, $state-error-color, $state-error-icon);
 }
