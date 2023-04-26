@@ -19,19 +19,19 @@
         <v-navigation-drawer temporary v-model="navVisible" style="z-index: 1000; position: fixed; bottom: 0;">
           <v-list density="compact" nav>
             
-      <v-list-subheader>General</v-list-subheader>
+      <v-list-subheader>General</v-list-subheader$>
       
         <v-list-item prepend-icon="mdi-home" title="Home" href="/" :active="currentPath === `/`" active-color="primary"></v-list-item>
         
       
-      <v-list-subheader>Extensions</v-list-subheader>
+      <v-list-subheader>Extensions</v-list-subheader$>
       
         <v-list-item v-if="visibilityChannel === `beta`" prepend-icon="mdi-format-text-rotation-none" title="Split at Character" href="/Docs/Extensions/Split-at-Character" :active="currentPath === `/Docs/Extensions/Split-at-Character`" active-color="primary"></v-list-item>
         
         <v-list-item prepend-icon="mdi-script-text-play" title="Local Script Actions Handler" href="/Docs/Extensions/Local-Script-Action-Handler" :active="currentPath === `/Docs/Extensions/Local-Script-Action-Handler`" active-color="primary"></v-list-item>
         
       
-      <v-list-subheader>Widgets</v-list-subheader>
+      <v-list-subheader>Widgets</v-list-subheader$>
       
         <v-list-item v-if="visibilityChannel === `beta`" prepend-icon="mdi-timer-outline" title="Timer Widget" href="/Docs/Widgets/Timer-Widget" :active="currentPath === `/Docs/Widgets/Timer-Widget`" active-color="primary"></v-list-item>
         
@@ -42,14 +42,14 @@
         <v-list-item prepend-icon="mdi-volume-mute" title="Mute Indicator" href="/Docs/Widgets/Mute-Indicator" :active="currentPath === `/Docs/Widgets/Mute-Indicator`" active-color="primary"></v-list-item>
         
       
-      <v-list-subheader>Tools</v-list-subheader>
+      <v-list-subheader>Tools</v-list-subheader$>
       
         <v-list-item prepend-icon="mdi-tools" title="Extensions Builder" href="/Extensions-Builder/" :active="currentPath === `/Extensions-Builder/`" active-color="primary"></v-list-item>
         
         <v-list-item v-if="visibilityChannel === `beta`" prepend-icon="mdi-toolbox" title="Streamer.bot Toolbox" href="/Streamerbot-Toolbox" :active="currentPath === `/Streamerbot-Toolbox`" active-color="primary"></v-list-item>
         
       
-      <v-list-subheader>OBS Plugins With Streamer.bot</v-list-subheader>
+      <v-list-subheaderv-if="visibilityChannel === `beta`">OBS Plugins With Streamer.bot</v-list-subheader$>
       
         <v-list-item v-if="visibilityChannel === `beta`" prepend-icon="mdi-barcode" title="Time Warp Scan" href="/OBS-Plugins/Time-Warp-Scan/Docs" :active="currentPath === `/OBS-Plugins/Time-Warp-Scan/Docs`" active-color="primary"></v-list-item>
         
