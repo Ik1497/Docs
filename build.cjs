@@ -111,7 +111,7 @@ async function createPage(html, metadata, path, navPath) {
 
     if (navGroupHtml != ``) {
       navigationHtml += `
-      <v-list-subheader${navGroupIf != `` ? `v-if="${navGroupIf}"` : ``}>${navigationGroup.name}</v-list-subheader$>
+      <v-list-subheader ${navGroupIf != `` ? `v-if="${navGroupIf}"` : ``}>${navigationGroup.name}</v-list-subheader>
       ${navGroupHtml}
       `
     }
