@@ -89,7 +89,9 @@
 <p class="page-description">Run action with Local Scripts</p>
 <v-divider style="margin-block: 1rem;"></v-divider>
 <h2>Download</h2>
-<v-alert text="The files need to stay located in the same folder." type="warning" variant="tonal"></v-alert>
+<blockquote>
+  <p class="warning">The files need to stay located in the same folder.</p>
+</blockquote>
 <p><i-button-grid><i-button-grid-item data-name=".Zip File Download" data-description="Click to Download" data-icon="mdi:folder-zip" data-link="/Extensions/Local-Script-Action-Handler/bat-file-actions-handler.zip"></i-button-grid-item></i-button-grid></p>
 <h2>Prerequisites</h2>
 <p>Node.js: Node.js is needed to send out the action via the command line to Streamer.bot. Install: <a href="https://nodejs.org/" rel="noopener noreferrer" target="_blank">https://nodejs.org/</a> you can choose either versions. To verify it's installed correctly go the your command line (<v-kbd style="display: inline;">windows</v-kbd> <v-kbd style="display: inline;">+</v-kbd> <v-kbd style="display: inline;">r</v-kbd> --&gt; <v-code style="display: inline;">cmd</v-code>) and type <v-code style="display: inline;">node -v</v-code> and if it says <v-code style="display: inline;">v.....</v-code> you have installed it correctly.</p>
@@ -134,7 +136,8 @@
             return {
               navVisible: false,
               currentPath: location.pathname,
-              visibilityChannel: localStorage.getItem(`websiteSettings__visibilityChannel`)
+              visibilityChannel: localStorage.getItem(`websiteSettings__visibilityChannel`),
+              tabs: {}
             }
           }
         })

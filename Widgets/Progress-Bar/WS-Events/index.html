@@ -88,7 +88,9 @@
 <h1 class="page-title">Progress Bar URL Params Event Data</h1>
 <p class="page-description">All the event source data for the Progress Bar URL Params</p>
 <v-divider style="margin-block: 1rem;"></v-divider>
-<v-alert text="Some of the event data below are based on estimates, so certain things could be wrong. If you spot anything that is incorrect, please notify me with a GitHub issue or in Discord." type="info" variant="tonal"></v-alert>
+<blockquote>
+  <p class="info">Some of the event data below are based on estimates, so certain things could be wrong. If you spot anything that is incorrect, please notify me with a GitHub issue or in Discord.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -228,7 +230,8 @@
             return {
               navVisible: false,
               currentPath: location.pathname,
-              visibilityChannel: localStorage.getItem(`websiteSettings__visibilityChannel`)
+              visibilityChannel: localStorage.getItem(`websiteSettings__visibilityChannel`),
+              tabs: {}
             }
           }
         })
