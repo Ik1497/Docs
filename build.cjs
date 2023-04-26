@@ -31,7 +31,7 @@ const customClassExt = {
 const vuetifyExtension = {
   type: `output`,
   filter: function (text) {
-    return text
+    text = text
       .replaceAll(`<hr>`, `<v-divider style="margin-block: 1rem;"></v-divider>`)
       .replaceAll(`<hr/>`, `<v-divider style="margin-block: 1rem;"></v-divider>`)
       .replaceAll(`<hr />`, `<v-divider style="margin-block: 1rem;"></v-divider>`)
@@ -39,6 +39,12 @@ const vuetifyExtension = {
       .replaceAll(`</code>`, `</v-code>`)
       .replaceAll(`<kbd>`, `<v-kbd style="display: inline;">`)
       .replaceAll(`</kbd>`, `</v-kbd>`)
+      .replace(
+        /<blockquote>([\S\s]*?)<p class="([\S\s]*?)">([\S\s]*?)<\/p>([\S\s]*?)<\/blockquote>/gm, 
+        `<v-alert text="$3" type="$2" variant="tonal"></v-alert>`
+      )
+
+    return text
   }
 };
 
