@@ -97,14 +97,7 @@
 <h2>Widget</h2>
 <p>Put this URL into OBS: <a href="https://ik1497.github.io/Extensions/Weather/" rel="noopener noreferrer" target="_blank">https://ik1497.github.io/Extensions/Weather/</a></p>
 <p><img class="img-400"  src="/Extensions/Weather/overview.png" alt="Preview of how the widget will or can look" /></p>
-<p><tabs>
-  <tab name="Day">
-    <img class="img-400"  src="/Extensions/Weather/overview-day.gif" alt="Preview of how the widget looks when it's day time" />
-  </tab>
-  <tab name="Night">
-    <img class="img-400"  src="/Extensions/Weather/overview-night.gif" alt="Preview of how the widget looks when it’s night time" />
-  </tab>
-</tabs></p>
+<p>undefined</p>
 <h3>URL Parameters</h3>
 <p><i-button-grid><i-button-grid-item data-name="Customize with URL Parameters" data-description="Find the URL Parameters of this widget on this website" data-icon="mdi:google-chrome" data-link="/Extensions-Builder/"></i-button-grid-item></i-button-grid></p>
             </v-main>
@@ -135,7 +128,8 @@
             return {
               navVisible: false,
               currentPath: location.pathname,
-              visibilityChannel: localStorage.getItem(`websiteSettings__visibilityChannel`)
+              visibilityChannel: localStorage.getItem(`websiteSettings__visibilityChannel`),
+              tabs: {}
             }
           }
         })
