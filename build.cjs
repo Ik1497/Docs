@@ -268,7 +268,7 @@ ${html}
         }
 
         /**************/
-        /* COMPONENTS */ 
+        /* COMPONENTS */
         /**************/
 
         i-sb-import-wrapper {
