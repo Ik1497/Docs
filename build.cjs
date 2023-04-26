@@ -90,6 +90,7 @@ async function createPage(html, metadata, path, navPath) {
 
   navigation.navigationItems.forEach(navigationGroup => {
     let navGroupHtml = ``
+    let navGroupIf = `visibilityChannel === \`beta\``
 
     navigationGroup.groupItems.forEach(navGroupItem => {
       navGroupItem = navGroupItem.groupItem
@@ -98,16 +99,19 @@ async function createPage(html, metadata, path, navPath) {
         navGroupHtml += `
         <v-list-item v-if="visibilityChannel === \`beta\`" prepend-icon="${navGroupItem.icon.replace(`mdi `, ``)}" title="${navGroupItem.name}" href="${navGroupItem.href}" :active="currentPath === \`${navGroupItem.href}\`" active-color="primary"></v-list-item>
         `
+
       } else {
         navGroupHtml += `
         <v-list-item prepend-icon="${navGroupItem.icon.replace(`mdi `, ``)}" title="${navGroupItem.name}" href="${navGroupItem.href}" :active="currentPath === \`${navGroupItem.href}\`" active-color="primary"></v-list-item>
         `
+
+        navGroupIf = ``
       }
     });
 
     if (navGroupHtml != ``) {
       navigationHtml += `
-      <v-list-subheader>${navigationGroup.name}</v-list-subheader>
+      <v-list-subheader${navGroupIf != `` ? `v-if="${navGroupIf}"` : ``}>${navigationGroup.name}</v-list-subheader$>
       ${navGroupHtml}
       `
     }
