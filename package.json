@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Ik1497/Docs#readme",
   "dependencies": {
-    "showdown": "^2.1.0"
+    "showdown": "^2.1.0",
+    "uuid": "^9.0.0"
   }
 }

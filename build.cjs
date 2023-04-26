@@ -1,6 +1,7 @@
 const fs = require(`fs`)
 const showdown = require(`showdown`)
 const https = require('https');
+const { v4: uuidv4 } = require('uuid');
 
 const classMap = {
   img: `img-400`
@@ -48,7 +49,7 @@ const vuetifyExtension = {
 
     text = text.replace(/<tabs>([\S\s]*?)<\/tabs>/g, (match, groupTab) => {
       const tab = groupTab.trim()
-      const id = crypto.randomUUID()
+      const id = uuidv4()
       let tabContent = ``
       let windowContent = ``
     
