@@ -267,7 +267,15 @@ ${html}
           padding-block: 0.5rem;
         }
 
+        /**************/
+        /* COMPONENTS */ 
+        /**************/
 
+        i-sb-import-wrapper {
+          --i-sb-import-background: #252525;
+          --i-sb-import-code-background: #181818;
+          --i-sb-import-color: #ffffff;
+        }
       </style>  
     </body>
   
