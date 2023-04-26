@@ -78,7 +78,7 @@ const vuetifyExtension = {
       return newText
     });
 
-    console.log(vuetifyExtension, text)
+    console.log(`vuetifyExtension`, text)
   }
 };
 
