@@ -59,6 +59,8 @@ const vuetifyExtension = {
         windowContent += `<v-window-item value="${groupTabName.trim()}">${groupTabContent.trim()}</v-window-item>
         `
       });
+
+      console.log(`Replacing:`, match)
     
       return `<v-card>
       <v-tabs v-model="tabs[\`${id}\`]" bg-color="primary">
@@ -72,8 +74,6 @@ const vuetifyExtension = {
       </v-card-text>
     </v-card>`
     });
-
-    return text
   }
 };
 
