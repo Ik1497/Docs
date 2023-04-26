@@ -226,6 +226,16 @@ async function createPage(html, metadata, path, navPath) {
         p:not([class]) {
           padding-bottom: 1rem;
         }
+
+        ol:not([class]) {
+          list-style: none;
+          counter-reset: ol;
+        }
+
+        ol:not([class]) li::before {
+          counter-increment: ol;
+          content: counter(ol) ". "
+        }
       </style>  
     </body>
   
