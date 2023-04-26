@@ -97,19 +97,10 @@
 <h2>Widget</h2>
 <p>Put this URL into OBS: <a href="https://ik1497.github.io/Extensions/Weather/" rel="noopener noreferrer" target="_blank">https://ik1497.github.io/Extensions/Weather/</a></p>
 <p><img class="img-400"  src="/Extensions/Weather/overview.png" alt="Preview of how the widget will or can look" /></p>
-<p><v-card>
-        <v-tabs v-model="tabs[`99ea4282-b432-4b56-aed2-85964e6ea493`]" bg-color="primary">
-          <v-tab value="Day">Day</v-tab>
-        <v-tab value="Night">Night</v-tab>
-        </v-tabs>
-      
-        <v-card-text>
-          <v-window v-model="tabs[`99ea4282-b432-4b56-aed2-85964e6ea493`]">
-            <v-window-item value="Day"><img class="img-400"  src="/Extensions/Weather/overview-day.gif" alt="Preview of how the widget looks when it's day time" /></v-window-item>
-        <v-window-item value="Night"><img class="img-400"  src="/Extensions/Weather/overview-night.gif" alt="Preview of how the widget looks when it’s night time" /></v-window-item>
-          </v-window>
-        </v-card-text>
-      </v-card></p>
+<h3>Day</h3>
+<p><img class="img-400"  src="/Extensions/Weather/overview-day.gif" alt="Preview of how the widget looks when it's day time" /></p>
+<h3>Night</h3>
+<p><img class="img-400"  src="/Extensions/Weather/overview-night.gif" alt="Preview of how the widget looks when it’s night time" /></p>
 <h3>URL Parameters</h3>
 <p><i-button-grid><i-button-grid-item data-name="Customize with URL Parameters" data-description="Find the URL Parameters of this widget on this website" data-icon="mdi:google-chrome" data-link="/Extensions-Builder/"></i-button-grid-item></i-button-grid></p>
             </v-main>
