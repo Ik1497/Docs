@@ -243,9 +243,28 @@ ${html}
           content: counter(ol) ". "
         }
 
+        table {
+          background: #181818;
+          border-radius: 8px;
+          margin-block: 1rem;
+          border-spacing: 0;
+          overflow: hidden;
+        }
+
+        table thead tr {
+          background: #252525;
+        }
+
+        table tbody tr:nth-child(even) {
+          background: #252525;
+        }
+
         th, td {
           padding-inline: 0.5rem;
+          padding-block: 0.5rem;
         }
+
+
       </style>  
     </body>
   
