@@ -39,8 +39,6 @@ const vuetifyExtension = {
       .replaceAll(`</code>`, `</v-code>`)
       .replaceAll(`<kbd>`, `<v-kbd style="display: inline;">`)
       .replaceAll(`</kbd>`, `</v-kbd>`)
-      .replaceAll(`<table>`, `<v-table>`)
-      .replaceAll(`</table>`, `</v-table>`)
       .replace(
         /<blockquote>([\S\s]*?)<p class="([\S\s]*?)">([\S\s]*?)<\/p>([\S\s]*?)<\/blockquote>/gm, 
         `<v-alert text="$3" type="$2" variant="tonal"></v-alert>`
