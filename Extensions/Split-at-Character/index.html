@@ -323,6 +323,16 @@ Drag and Drop the <v-code style="display: inline;">Import File</v-code> into the
         p:not([class]) {
           padding-bottom: 1rem;
         }
+
+        ol:not([class]) {
+          list-style: none;
+          counter-reset: ol;
+        }
+
+        ol:not([class]) li::before {
+          counter-increment: ol;
+          content: counter(ol) ". "
+        }
       </style>  
     </body>
   
