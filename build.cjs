@@ -1,6 +1,7 @@
 const fs = require(`fs`)
 const showdown = require(`showdown`)
 const https = require('https');
+const { v4: uuidv4 } = require('uuid');
 
 const classMap = {
   img: `img-400`
@@ -20,10 +21,10 @@ const customClassExt = {
       .replace(/<(.+)>(.+)\{\.([a-z0-9A-Z\s]+)\}/g, `<$1 class="$3">$2`) // Miscellaneous
       .replace(/<p>\{\.([a-z0-9A-Z\s]+)\}<\/p>[\n]?<(.+)>/g, `<$2 class="$1">`) // ol, ul
       .replace(/class="(.+)"/g, function (str) {
-          if (str.indexOf("<em>") !== -1) {
-              return str.replace(/<[/]?em>/g, '_');
-          }
-          return str;
+        if (str.indexOf("<em>") !== -1) {
+          return str.replace(/<[/]?em>/g, '_');
+        }
+        return str;
       }); // Prevent class name with 2 dashs being replace by `<em>` tag
   }
 };
@@ -43,13 +44,47 @@ const vuetifyExtension = {
         /<blockquote>([\S\s]*?)<p class="([\S\s]*?)">([\S\s]*?)<\/p>([\S\s]*?)<\/blockquote>/gm, 
         `<v-alert text="$3" type="$2" variant="tonal"></v-alert>`
       )
+    
+    // TABS //
+
+    text = text.replace(/<tabs>([\S\s]*?)<\/tabs>/g, (match, groupTab) => {
+      const tab = groupTab.trim()
+      const id = uuidv4()
+      let tabContent = ``
+      let windowContent = ``
+    
+      tab.replace(/<tab name="([\S\s]*?)">([\S\s]*?)<\/tab>/g, (match, groupTabName, groupTabContent) => {
+        tabContent += `<v-tab value="${groupTabName.trim()}">${groupTabName.trim()}</v-tab>
+        `
+        windowContent += `<v-window-item value="${groupTabName.trim()}">${groupTabContent.trim()}</v-window-item>
+        `
+      });
+
+      let newText = `<v-card>
+        <v-tabs v-model="tabs[\`${id}\`]" bg-color="primary">
+          ${tabContent.trimEnd()}
+        </v-tabs>
+      
+        <v-card-text>
+          <v-window v-model="tabs[\`${id}\`]">
+            ${windowContent.trimEnd()}
+          </v-window>
+        </v-card-text>
+      </v-card>`
+    
+      return newText
+    });
 
     return text
   }
 };
 
 let converter = new showdown.Converter({
-  extensions: [...bindings, customClassExt, vuetifyExtension]
+  extensions: [
+    vuetifyExtension,
+    ...bindings,
+    customClassExt
+  ]
 })
 
 converter.setOption(`tables`, true)
@@ -122,9 +157,6 @@ async function createPage(html, metadata, path, navPath) {
       `
     }
   });
-
-
-
 
   createFileAndFolder(path, `
   <!DOCTYPE html>
@@ -210,7 +242,8 @@ ${html}
             return {
               navVisible: false,
               currentPath: location.pathname,
-              visibilityChannel: localStorage.getItem(\`websiteSettings__visibilityChannel\`)
+              visibilityChannel: localStorage.getItem(\`websiteSettings__visibilityChannel\`),
+              tabs: {}
             }
           }
         })
