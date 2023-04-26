@@ -86,8 +86,6 @@ let converter = new showdown.Converter({
   extensions: [...bindings, customClassExt, vuetifyExtension]
 })
 
-console.log(converter.makeHtml(markdown))
-
 converter.setOption(`tables`, true)
 converter.setOption(`emoji`, true)
 converter.setOption(`excludeTrailingPunctuationFromURLs`, true)
@@ -116,6 +114,8 @@ fs.readdir(`./docs-src/`, function (err, files) {
       const html = converter.makeHtml(markdown)
       const metadata = converter.getMetadata()
       const htmlFileName = metadata?.path ? metadata?.path : file
+
+      console.log(html)
 
       metadata.pageId = file.replaceAll(`.md`, ``)
 
