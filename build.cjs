@@ -47,7 +47,7 @@ const vuetifyExtension = {
     
     // TABS //
 
-    text = text.replace(/<tabs>([\S\s]*?)<\/tabs>/g, (match, groupTab) => {
+    text.replace(/<tabs>([\S\s]*?)<\/tabs>/g, (match, groupTab) => {
       const tab = groupTab.trim()
       const id = uuidv4()
       let tabContent = ``
@@ -60,7 +60,7 @@ const vuetifyExtension = {
         `
       });
     
-      newText = `<v-card>
+      return `<v-card>
       <v-tabs v-model="tabs[\`${id}\`]" bg-color="primary">
         ${tabContent.trimEnd()}
       </v-tabs>
