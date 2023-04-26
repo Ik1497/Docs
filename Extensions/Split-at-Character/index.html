@@ -1,24 +1,51 @@
 
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.14/dist/vuetify.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@3.1.14/dist/vuetify.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css" integrity="sha512-LX0YV/MWBEn2dwXCYgQHrpa9HJkwB+S+bnBpifSOTO1No27TqNMKYoAn6ff2FBh03THAzAiiCwQ+aPX+/Qt/Ow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <!-- Site Meta -->
+      <meta name="og:site_name" content="Streamer.bot Actions">
+      <meta property="og:image" content="https://ik1497.github.io/assets/images/favicon.png">
+      <link rel="icon" href="https://ik1497.github.io/assets/images/favicon.png">
+      <meta property="og:type" content="website">
+      <meta name="theme-color" content="#B80086">
+      <meta name="author" content="Ik1497">
+      
+      <!-- Page Meta -->
+      <meta property="og:title" content="Split at Character">
+      <title>Split at Character</title>
+      
+      <meta property="og:description" content="Split a string at a specific character in multiple variables">
+      <meta name="description" content="Split a string at a specific character in multiple variables">
 
-  <div id="app">
-    <v-app>
-      <v-layout style="overflow-y: visible; overflow-x: hidden; position: relative; height: 100vh;">
-        <v-app-bar color="primary" style="position: fixed; top: 0; height: fit-content;">
-          <v-app-bar-nav-icon @click="navVisible = !navVisible"></v-app-bar-nav-icon>
-    
-          <v-app-bar-title>Streamer.bot Actions Docs</v-app-bar-title>
-        </v-app-bar>
-  
-        <v-navigation-drawer temporary v-model="navVisible" style="z-index: 1000; position: fixed; bottom: 0;">
-          <v-list density="compact" nav>
-            
+      <!-- Scripts -->
+      <script src="https://ik1497.github.io/components/main.js"></script>
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.14/dist/vuetify.min.js"></script>
+
+      <!-- Styles -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@3.1.14/dist/vuetify.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css" integrity="sha512-LX0YV/MWBEn2dwXCYgQHrpa9HJkwB+S+bnBpifSOTO1No27TqNMKYoAn6ff2FBh03THAzAiiCwQ+aPX+/Qt/Ow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <div id="app">
+        <v-app>
+          <v-layout style="overflow-y: visible; overflow-x: hidden; position: relative; height: 100vh;">
+            <v-app-bar color="primary" style="position: fixed; top: 0; height: fit-content;">
+              <v-app-bar-nav-icon @click="navVisible = !navVisible"></v-app-bar-nav-icon>
+        
+              <v-app-bar-title>Streamer.bot Actions Docs</v-app-bar-title>
+            </v-app-bar>
+      
+            <v-navigation-drawer temporary v-model="navVisible" style="z-index: 1000; position: fixed; bottom: 0;">
+              <v-list density="compact" nav>
+                
       <v-list-subheader>General</v-list-subheader$>
       
         <v-list-item prepend-icon="mdi-home" title="Home" href="/" :active="currentPath === `/`" active-color="primary"></v-list-item>
@@ -54,11 +81,11 @@
         <v-list-item v-if="visibilityChannel === `beta`" prepend-icon="mdi-barcode" title="Time Warp Scan" href="/OBS-Plugins/Time-Warp-Scan/Docs" :active="currentPath === `/OBS-Plugins/Time-Warp-Scan/Docs`" active-color="primary"></v-list-item>
         
       
-          </v-list>
-        </v-navigation-drawer>
-    
-        <v-main style="margin-top: 1rem; max-width: 100rem; margin-inline: auto; padding-inline: 1rem;">
-          <h2>Actions Import</h2>
+              </v-list>
+            </v-navigation-drawer>
+        
+            <v-main style="margin-top: 1rem; max-width: 100rem; margin-inline: auto; padding-inline: 1rem;">
+              <h2>Actions Import</h2>
 <p><i-sb-import-loader import-name="Split at Character">TlM0RR+LCAAAAAAABADtV1tv4kYYfa/U/2DlqZV2smPP+LZbVQok4ZINWyABQtmHudm4jC/1BeKs9r93bKDLZSM1fWiqFQgEzJnvdsY+3+fPP/6gaWdLkWZBHJ2904w39UJEQqH+nQHwizZMZJBrJNeac5ISlotUW+rn8BxqP9FSCxY6du2ftV8BOFvbqi3KV6bMf6/+a9rn9ZeCAl451V2OmGHYgDmCAwxNBqhhM4Ad22YuNqhjobWv2ujPQhRVMlEh5ddVEREqReUvTwuxs/7IZMHFdRqH7SDL47RUWzwis5092+p+Py7tk9aMudiJ7qdxkfxLKmoHRK5ImQ2K6DiPlEQ8Di9qvo5RFkesSFMR5cdYnga+rw6tIvnTTqxD6vfo36v9a4b1MhcZS4Nkk8khuhAiuZDBUhxlsq5DeELlycRB5BpsvpvNxoEqdJXNZrcBS+Ms9vLz3tXdbHadqmxWcbqw8Gy2xIpJBJHuzmZhxuJUBvScS3m26/DTfmRa5qI+MJUzn/QSGjL/Hskn3hrlH1fw5rKfrPi4m5Hxrf9gPM4ZuvX7eqMzHJtqzZQKty/7cZe1RwFtyT86re6SGit/MJnLBzSC06GfVLhQvpp95bfdrWMw1MjIpO//NmzMWcifxmX3ibUeE97s8g9ysLxHg1L5j26ai9p/c9KDLJTFtGzA6WQOO5fQf5h0I6ZngcoVP2vX343L6WTYQBR1F6y8cDvtgRTtfnG/ziXe5FSMWu4laV2X/Um3fJgs4pvhnq/L+yu/uDdGUOERH+uSRv24E3XnHLo6bzd03uxknTZfsnDwdHOX9Zr+olvbj6dLFlzEKj/YaS1U7Rerj2Uj6VyufG645bR9W9y1RsUUDeJq/abMknXtax87HNQ1VBys7XqUjGAxqmpUfH+suV50q3P6IHuSX12XUzTKpyquAgKqzkWdFxSGdDvBJvbfPMM6FgtHkE+6heKo5OP7GvNU/dXn4NpOUsHiMAnkMxc3F5KUw5ykx7dhjWdkKQYiK2R+F49IGlSy9PzOvT2Ht9lGHj3sYSRMACHDADNEACWIASQMhi3DgVDAA8OVCPx5lZ+Son0kL5Mqklu99pGtsO3Jao08I63rFCMuHqtAX1e/bH8eCVGrCnGoUSyWkiSZ4DvoGvzy5tv9gjFkIEoRgCayABauCShkFuAu4zrRLUy5+Xr94uqRhIkU77RsCwrC5ppSNX5qI6c2cmojpzaivUYb8YQtkCEEsKlhAuyaGBAPcqWauuuYpm0wXbx6GzF22sib57RmuSm1t9GcXDzmB5kviaw1/+xuHmSaehNNxpGvVVu1fK6kNhKCZ1oea1RslDqItFDRHSjx1rYhsgO/pMjju3Xt3yhi3Z0cZurE0oGle1A9w0AKCIQOcBzTsblucNN0XsqzbqBvs3x41C9t1f+Y45qi50h+q719OU/Q9FxmmwaAiFGAsasDlzsYGND1PENdjy6hr8qT/h+ONI5r29T1FA/CdgBW9yRwMMaAWVB3CXSQLvj/aaTJRBgAVaZq66eZ5jTTnGaa00zzGjMN8bhJTMqAmmtcNdMQ9WismgdAliE86FoCc/I9zzR5kEvxXruIuBpqtou7+vTirqxbNuHIdYGg6okaMxMCKrhqzQa0OMbQg/R7m17ev5wl23LVW9gAwWqWRsgAxLAsYFlI2NTDFmXo+5tdqq/1zvUAsmOqzMJQtejt/i9/AXUfUpNIGAAA</i-sb-import-loader></p>
 <h2>Installation</h2>
 <p>In Streamer.bot select <v-code style="display: inline;">Import</v-code> in the top left.
@@ -243,58 +270,60 @@ Drag and Drop the <v-code style="display: inline;">Import File</v-code> into the
 <v-divider style="margin-block: 1rem;"></v-divider>
 <p>For any suggestions about this extension send me a DM on discord or open an <a href="/Links/Issues" rel="noopener noreferrer" target="_blank">issue</a>.</p>
 <p>If there are any bugs with this Extension you can make a #support post in <a href="https://discord.streamer.bot" rel="noopener noreferrer" target="_blank">The Streamer.bot Discord Server</a>.</p>
-        </v-main>
-      </v-layout>
-    </v-app>
-  </div>
-  
-  <script>
-    const { createApp } = Vue
-    const { createVuetify } = Vuetify
-  
-    const vuetify = createVuetify({
-      theme: {
-        defaultTheme: `dark`,
-        themes: {
-          dark: {
-            colors: {
-              primary: `#1E88E5`,
-              secondary: `#42A5F5`
+            </v-main>
+          </v-layout>
+        </v-app>
+      </div>
+
+      <script>
+        const { createApp } = Vue
+        const { createVuetify } = Vuetify
+      
+        const vuetify = createVuetify({
+          theme: {
+            defaultTheme: `dark`,
+            themes: {
+              dark: {
+                colors: {
+                  primary: `#1E88E5`,
+                  secondary: `#42A5F5`
+                }
+              }
             }
           }
+        })
+      
+        const app = createApp({
+          data() {
+            return {
+              navVisible: false,
+              currentPath: location.pathname,
+              visibilityChannel: localStorage.getItem(`websiteSettings__visibilityChannel`)
+            }
+          }
+        })
+      
+        app.use(vuetify).mount(`#app`)
+      </script>
+      
+      <style>
+        html {
+          overflow-y: auto;
         }
-      }
-    })
-  
-    const app = createApp({
-      data() {
-        return {
-          navVisible: false,
-          currentPath: location.pathname,
-          visibilityChannel: localStorage.getItem(`websiteSettings__visibilityChannel`)
+      
+        body {
+          font-family: Inter;
         }
-      }
-    })
+        
+        img.img-400 {
+          max-width: 100%;
+          width: 40rem;
+        }
+        
+        p:not([class]) {
+          padding-bottom: 1rem;
+        }
+      </style>  
+    </body>
   
-    app.use(vuetify).mount(`#app`)
-  </script>
-  
-  <style>
-  html {
-    overflow-y: auto;
-  }
-
-  body {
-    font-family: Inter;
-  }
-  
-  img.img-400 {
-    max-width: 100%;
-    width: 40rem;
-  }
-  
-  p:not([class]) {
-    padding-bottom: 1rem;
-  }
-  </style>  
   
