@@ -47,7 +47,7 @@ const vuetifyExtension = {
     
     // TABS //
 
-    text.replace(/<tabs>([\S\s]*?)<\/tabs>/g, (match, groupTab) => {
+    text = text.replace(/<tabs>([\S\s]*?)<\/tabs>/g, (match, groupTab) => {
       const tab = groupTab.trim()
       const id = uuidv4()
       let tabContent = ``
@@ -77,6 +77,8 @@ const vuetifyExtension = {
 
       return newText
     });
+
+    console.log(vuetifyExtension, text)
   }
 };
 
