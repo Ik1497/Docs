@@ -173,12 +173,12 @@ async function createPage(html, metadata, path, navPath) {
       
             <v-navigation-drawer temporary v-model="navVisible" style="z-index: 1000; position: fixed; bottom: 0;">
               <v-list density="compact" nav>
-                ${navigationHtml}
+${navigationHtml}
               </v-list>
             </v-navigation-drawer>
         
             <v-main style="margin-top: 1rem; max-width: 100rem; margin-inline: auto; padding-inline: 1rem;">
-              ${html}
+${html}
             </v-main>
           </v-layout>
         </v-app>
