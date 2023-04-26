@@ -242,6 +242,10 @@ async function createPage(html, metadata, path, navPath) {
           counter-increment: ol;
           content: counter(ol) ". "
         }
+
+        th, td {
+          padding-inline: 0.5rem;
+        }
       </style>  
     </body>
   
