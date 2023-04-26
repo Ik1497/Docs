@@ -60,9 +60,7 @@ const vuetifyExtension = {
         `
       });
 
-      console.log(`Replacing:`, match)
-    
-      return `<v-card>
+      let newText = `<v-card>
       <v-tabs v-model="tabs[\`${id}\`]" bg-color="primary">
         ${tabContent.trimEnd()}
       </v-tabs>
@@ -73,6 +71,11 @@ const vuetifyExtension = {
         </v-window>
       </v-card-text>
     </v-card>`
+    
+
+      console.log(`Replacing:`, match, `\n\nTo:`, newText)
+
+      return newText
     });
   }
 };
