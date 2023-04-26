@@ -86,6 +86,8 @@ let converter = new showdown.Converter({
   extensions: [...bindings, customClassExt, vuetifyExtension]
 })
 
+console.log(converter.makeHtml(markdown))
+
 converter.setOption(`tables`, true)
 converter.setOption(`emoji`, true)
 converter.setOption(`excludeTrailingPunctuationFromURLs`, true)
