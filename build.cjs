@@ -178,6 +178,9 @@ ${navigationHtml}
             </v-navigation-drawer>
         
             <v-main style="margin-top: 1rem; max-width: 100rem; margin-inline: auto; padding-inline: 1rem;">
+<h1 class="page-title">${metadata?.title}</h1>
+<p class="page-description">${metadata?.description}</p>
+<v-divider style="margin-block: 1rem;"></v-divider>
 ${html}
             </v-main>
           </v-layout>
