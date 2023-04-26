@@ -48,6 +48,10 @@ const vuetifyExtension = {
     // TABS //
 
     text = text.replace(/<tabs>([\S\s]*?)<\/tabs>/g, (match, groupTab) => {
+      groupTab = groupTab
+        .replaceAll(`<p>`, ``)
+        .replaceAll(`</p>`, ``)
+
       const tab = groupTab.trim()
       const id = uuidv4()
       let tabContent = ``
