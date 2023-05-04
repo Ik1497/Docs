@@ -70,7 +70,7 @@ const vuetifyExtension = {
         <v-tabs v-model="tabs[\`${id}\`]" bg-color="primary">
           ${tabContent.trimEnd()}
         </v-tabs>
-      
+
         <v-card-text>
           <v-window v-model="tabs[\`${id}\`]">
             ${windowContent.trimEnd()}
@@ -89,8 +89,19 @@ const vuetifyExtension = {
       importCode = importCode
         .replaceAll(`<p>`, ``)
         .replaceAll(`</p>`, ``)
+        .trim()
 
-      let newText = `<div>IMPORT CODE</div><div>${importCode}</div>`
+      let newText = `<v-sheet rounded="lg" style="padding: 1rem; margin-bottom: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-family: Poppins; font-weight: 500;">Import Code</div>
+          <div style="display: flex; gap: .5rem;">
+            <v-btn variant="tonal" @click="copy(\`${importCode}\`)">Copy</v-btn>
+            <v-btn variant="tonal" @click="download(\`${importCode}\`)">Download</v-btn>
+          </div>
+        </div>
+        <br>
+        <div style="overflow-x: auto; background: #181818; padding: 1rem; border-radius: .5rem .5rem 0  0; color: #aac8e4;">${importCode}</div>
+      </v-sheet>`
     
       return newText
     });
