@@ -45,7 +45,9 @@ const vuetifyExtension = {
         `<v-alert text="$3" type="$2" variant="tonal"></v-alert>`
       )
     
+    //////////
     // TABS //
+    //////////
 
     text = text.replace(/<tabs>([\S\s]*?)<\/tabs>/g, (match, groupTab) => {
       groupTab = groupTab
@@ -75,6 +77,20 @@ const vuetifyExtension = {
           </v-window>
         </v-card-text>
       </v-card>`
+    
+      return newText
+    });
+
+    /////////////////
+    // Import Code //
+    /////////////////
+
+    text = text.replace(/<import-code>([\S\s]*?)<\/import-code>/g, (match, importCode) => {
+      importCode = importCode
+        .replaceAll(`<p>`, ``)
+        .replaceAll(`</p>`, ``)
+
+      let newText = `<div>IMPORT CODE</div><div>${importCode}</div>`
     
       return newText
     });
@@ -248,6 +264,22 @@ ${html}
               currentPath: location.pathname,
               visibilityChannel: localStorage.getItem(\`websiteSettings__visibilityChannel\`),
               tabs: {}
+            }
+          },
+          methods: {
+            copy(text) {
+              navigator.clipboard.writeText(text)
+            },
+            download(text = ``, filename = \`import.sb\`) {
+              let element = document.createElement('a');
+              element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+              element.setAttribute('download', filename);
+            
+              element.style.display = 'none';
+              document.body.append(element);
+            
+              element.click();
+              element.remove();
             }
           }
         })
