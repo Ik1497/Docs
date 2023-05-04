@@ -91,6 +91,7 @@ const vuetifyExtension = {
         .replaceAll(`</p>`, ``)
         .trim()
 
+      // <v-sheet rounded="lg" style="padding: 1rem; margin-bottom: 1rem;">
       //   <div style="display: flex; justify-content: space-between; align-items: center;">
       //   <div style="font-family: Poppins; font-weight: 500;">Import Code</div>
       //   <div style="display: flex; gap: .5rem;">
@@ -99,11 +100,9 @@ const vuetifyExtension = {
       //   </div>
       // </div>
       // <br>
-      let newText = `
-      <v-sheet rounded="lg" style="padding: 1rem; margin-bottom: 1rem;">
-        <div style="overflow-x: auto; background: #181818; padding: 1rem; border-radius: .5rem .5rem 0  0; color: #aac8e4;">${importCode}</div>
-      </v-sheet>
-      `
+      // <div style="overflow-x: auto; background: #181818; padding: 1rem; border-radius: .5rem .5rem 0  0; color: #aac8e4;">${importCode}</div>
+      // </v-sheet>
+      let newText = ``
     
       return newText
     });
