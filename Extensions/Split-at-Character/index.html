@@ -305,11 +305,11 @@ Drag and Drop the <v-code style="display: inline;">Import File</v-code> into the
               tabs: {}
             }
           },
-          methods: {
-            copy(text) {
+          methods: () => ({
+            copy: (text) => {
               navigator.clipboard.writeText(text)
             },
-            download(text = ``, filename = `import.sb`) {
+            download: (text = ``, filename = `import.sb`) => {
               let element = document.createElement('a');
               element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
               element.setAttribute('download', filename);
@@ -319,8 +319,8 @@ Drag and Drop the <v-code style="display: inline;">Import File</v-code> into the
             
               element.click();
               element.remove();
-            }
-          }
+            },
+          }),
         })
       
         app.use(vuetify).mount(`#app`)
