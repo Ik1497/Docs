@@ -102,7 +102,7 @@ const vuetifyExtension = {
       // <br>
       // <div style="overflow-x: auto; background: #181818; padding: 1rem; border-radius: .5rem .5rem 0  0; color: #aac8e4;">${importCode}</div>
       // </v-sheet>
-      let newText = ``
+      let newText = `${importCode}`
     
       return newText
     });
