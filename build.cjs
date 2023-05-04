@@ -277,7 +277,7 @@ ${html}
               tabs: {}
             }
           },
-          methods: () => ({
+          methods: {
             copy: (text) => {
               navigator.clipboard.writeText(text)
             },
@@ -292,7 +292,7 @@ ${html}
               element.click();
               element.remove();
             },
-          }),
+          },
         })
       
         app.use(vuetify).mount(\`#app\`)
