@@ -280,6 +280,22 @@ ${html}
               tabs: {}
             }
           },
+          methods: {
+            copy: (text) => {
+              navigator.clipboard.writeText(text)
+            },
+            download: (text = '', filename = 'import.sb') => {
+              let element = document.createElement('a');
+              element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+              element.setAttribute('download', filename);
+            
+              element.style.display = 'none';
+              document.body.append(element);
+            
+              element.click();
+              element.remove();
+            },
+          },
         })
       
         app.use(vuetify).mount(\`#app\`)
@@ -352,23 +368,6 @@ ${html}
   
   `)
 }
-
-// methods: {
-//   copy: (text) => {
-//     navigator.clipboard.writeText(text)
-//   },
-//   download: (text = '', filename = 'import.sb') => {
-//     let element = document.createElement('a');
-//     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-//     element.setAttribute('download', filename);
-  
-//     element.style.display = 'none';
-//     document.body.append(element);
-  
-//     element.click();
-//     element.remove();
-//   },
-// },
 
 function createFileAndFolder(path, content) {
   let dirs = path.split(`/`)
