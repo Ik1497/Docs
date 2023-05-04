@@ -52,7 +52,7 @@
             "name": "Local Script Actions Handler",
             "description": "Run action with Local Scripts",
             "href": "/Docs/Extensions/Local-Script-Action-Handler/",
-            "homePageIndex": 1
+            "homePageIndex": 2
           }
         }
       ]
@@ -82,13 +82,13 @@
             "type": "link",
             "channel": "public",
             "lastEdited": {
-              "date": "03/24/2023",
-              "Time": "2023-03-27T15:43:50.625Z"
+              "date": "05/04/2023",
+              "Time": "2023-05-04T17:07:39.939Z"
             },
             "description": "Make an easy to set-up dynamic progress bar with Streamer.bot",
-            "name": "Progress Bar v2.4",
+            "name": "Progress Bar v3",
             "href": "/Docs/Widgets/Progress-Bar/",
-            "homePageIndex": 2
+            "homePageIndex": 1
           }
         },
         {
