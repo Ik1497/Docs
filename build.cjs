@@ -67,11 +67,13 @@ const vuetifyExtension = {
       });
 
       let newText = `<v-card>
-        <v-tabs v-model="tabs[\`${id}\`]" bg-color="primary">${tabContent.trimEnd()}</v-tabs>
-
-        <v-card-text>
-          <v-window v-model="tabs[\`${id}\`]">${windowContent.trimEnd()}</v-window>
-        </v-card-text>
+      <v-tabs v-model="tabs[\`${id}\`]" bg-color="primary">${tabContent.trim()}</v-tabs>
+      
+      <v-card-text>
+      <v-window v-model="tabs[\`${id}\`]">
+        ${windowContent.trim()}
+      </v-window>
+      </v-card-text>
       </v-card>`
     
       return newText
