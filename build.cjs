@@ -97,7 +97,7 @@ const vuetifyExtension = {
       let newText = `<template #default>
         <v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
           <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
-            <div :style="{fontFamily: 'Poppins', fontWeight: '500'}">Import Code</div>
+            <div :style="{fontFamily: 'Poppins', fontWeight: '400', fontSize: '1.3rem'}">Import Code</div>
             <div :style="{display: 'flex', gap: '.5rem'}">
               <v-btn>Copy</v-btn>
               <v-btn>Download</v-btn>
@@ -228,7 +228,7 @@ async function createPage(html, metadata, path, navPath) {
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
     </head>
     <body>
       <div id="app">
