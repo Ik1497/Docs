@@ -94,7 +94,19 @@ const vuetifyExtension = {
       // @click="copy(\`${importCode}\`)"
       // @click="download(\`${importCode}\`)"
 
-      let newText = `<template #default><v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem'}"><div style="display: flex; justify-content: space-between; align-items: center;"><div style="font-family: Poppins; font-weight: 500;">Import Code</div><div style="display: flex; gap: .5rem;"><v-btn variant="tonal">Copy</v-btn><v-btn variant="tonal">Download</v-btn></div></div><br><div :style="{overflowX: 'auto', background: '#181818', padding: '1rem', borderRadius: '.5rem .5rem 0 0', color: '#aac8e4'}">${importCode}</div></v-sheet></template>`
+      let newText = `<template #default>
+        <v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem'}">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: Poppins; font-weight: 500;">Import Code</div>
+            <div style="display: flex; gap: .5rem;">
+              <v-btn variant="tonal">Copy</v-btn>
+              <v-btn variant="tonal">Download</v-btn>
+            </div>
+          </div>
+          <br>
+          <div :style="{overflowX: 'auto', background: '#181818', padding: '1rem', borderRadius: '.5rem .5rem 0 0', color: '#aac8e4', whiteSpace: 'pre'}">${importCode}</div>
+        </v-sheet>
+      </template>`
     
       return newText
     });
