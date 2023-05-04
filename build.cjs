@@ -277,11 +277,11 @@ ${html}
               tabs: {}
             }
           },
-          methods: {
-            copy(text) {
+          methods: () => ({
+            copy: (text) => {
               navigator.clipboard.writeText(text)
             },
-            download(text = \`\`, filename = \`import.sb\`) {
+            download: (text = \`\`, filename = \`import.sb\`) => {
               let element = document.createElement('a');
               element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
               element.setAttribute('download', filename);
@@ -291,8 +291,8 @@ ${html}
             
               element.click();
               element.remove();
-            }
-          }
+            },
+          }),
         })
       
         app.use(vuetify).mount(\`#app\`)
