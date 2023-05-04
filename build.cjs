@@ -62,7 +62,7 @@ const vuetifyExtension = {
       tab.replace(/<tab name="([\S\s]*?)">([\S\s]*?)<\/tab>/g, (match, groupTabName, groupTabContent) => {
         tabContent += `<v-tab value="${groupTabName.trim()}">${groupTabName.trim()}</v-tab>
         `
-        windowContent += `<v-window-item value="${groupTabName.trim()}">${groupTabContent.trim()}</v-window-item>
+        windowContent += `<v-window-item value="${groupTabName.trim()}"><template #default>${groupTabContent.trim()}</template></v-window-item>
         `
       });
 
@@ -91,20 +91,18 @@ const vuetifyExtension = {
         .replaceAll(`</p>`, ``)
         .trim()
 
-      let newText = `<template #default>
-        <v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
-          <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
-            <div :style="{fontFamily: 'Poppins', fontWeight: '400', fontSize: '1.1rem'}">Import Code</div>
-            <div :style="{display: 'flex', gap: '.5rem'}">
-              <v-btn @click="copy(\`${importCode}\`)">Copy</v-btn>
-              <v-btn @click="download(\`${importCode}\`)">Download</v-btn>
-            </div>
+      let newText = `<v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
+        <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
+          <div :style="{fontFamily: 'Poppins', fontWeight: '400', fontSize: '1.1rem'}">Import Code</div>
+          <div :style="{display: 'flex', gap: '.5rem'}">
+            <v-btn @click="copy(\`${importCode}\`)">Copy</v-btn>
+            <v-btn @click="download(\`${importCode}\`)">Download</v-btn>
           </div>
-          <br>
-          <div :style="{overflowX: 'auto', background: '#181818', padding: '1rem', borderRadius: '.5rem .5rem 0 0', color: '#aac8e4', whiteSpace: 'pre'}">${importCode}</div>
-        </v-sheet>
-      </template>`
-    
+        </div>
+        <br>
+        <div :style="{overflowX: 'auto', background: '#181818', padding: '1rem', borderRadius: '.5rem .5rem 0 0', color: '#aac8e4', whiteSpace: 'pre'}">${importCode}</div>
+      </v-sheet>`
+  
       return newText
     });
 
