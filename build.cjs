@@ -91,16 +91,13 @@ const vuetifyExtension = {
         .replaceAll(`</p>`, ``)
         .trim()
 
-      // @click="copy(${importCode})"
-      // @click="download(${importCode})"
-
       let newText = `<template #default>
         <v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
           <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
             <div :style="{fontFamily: 'Poppins', fontWeight: '400', fontSize: '1.1rem'}">Import Code</div>
             <div :style="{display: 'flex', gap: '.5rem'}">
-              <v-btn>Copy</v-btn>
-              <v-btn>Download</v-btn>
+              <v-btn @click="copy(\`${importCode}\`)">Copy</v-btn>
+              <v-btn @click="download(\`${importCode}\`)">Download</v-btn>
             </div>
           </div>
           <br>
