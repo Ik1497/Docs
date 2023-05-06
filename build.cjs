@@ -373,13 +373,21 @@ ${html}
 // URL Parameters //
 ////////////////////
 
-fs.readFile(`./api/url-parameters.json`, `utf8`, (err, data) => {
-  console.log(data)
-  data = JSON.parse(data)
-  console.log(data)
-  createFileAndFolder(`url-parameters/api.json`, JSON.stringify({
-    URLSearchParams: data
-  }))
+fs.readdir(`./url-parameters-src/`, function (err, files) {
+  if (err) return
+
+  let params = {}
+
+  files.forEach(file => {
+    fs.readFile(`./url-parameters-src/${file}`, `utf8`, (err, data) => {
+      if (err) return
+      if (!ValidateJson(data))
+
+      params[file] = data
+    });
+  });
+
+  createFileAndFolder(`/url-parameters/api.json`, JSON.stringify(params))
 });
 
 //////////////////////
@@ -401,4 +409,14 @@ function createFileAndFolder(path, content) {
   });
 
   fs.writeFileSync(`${addingPath}/${fileName}`, content)
+}
+
+function ValidateJson(json) {
+  try {
+    JSON.parse(json)
+  } catch (err) {
+    return false
+  }
+
+  return true
 }
