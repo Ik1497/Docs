@@ -138,9 +138,9 @@ converter.setOption(`underline`, true)
 // URL Parameters //
 ////////////////////
 
+createFileAndFolder(`Extensions/test.json`, ``)
 createFileAndFolder(`url-parameters/test.json`, ``)
 createFileAndFolder(`a/test.json`, ``)
-createFileAndFolder(`Extensions/test.json`, ``)
 
 fs.readdir(`./url-parameters-src/`, function (err, files) {
   if (err) return
