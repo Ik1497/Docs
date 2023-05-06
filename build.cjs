@@ -149,7 +149,7 @@ fs.readdir(`./url-parameters-src/`, function (err, files) {
 
       params[file] = data
 
-      if (fileIndex === files.length - 1) createFileAndFolder(`url-parameters/api.json`, JSON.stringify(params))
+      if (fileIndex === files.length - 1) createFileAndFolder(`docs/url-parameters/api.json`, JSON.stringify(params))
     });
   });
 });
