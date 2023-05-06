@@ -369,6 +369,21 @@ ${html}
   `)
 }
 
+////////////////////
+// URL Parameters //
+////////////////////
+
+fs.readFile('/api/url-parameter.json', (err, data) => {
+  data = JSON.parse(data)
+  createFileAndFolder(`/url-parameters/api.json`, JSON.stringify({
+    URLSearchParams: data
+  }))
+});
+
+//////////////////////
+// Helper Functions //
+//////////////////////
+
 function createFileAndFolder(path, content) {
   let dirs = path.split(`/`)
   let fileName = dirs.reverse()[0]
