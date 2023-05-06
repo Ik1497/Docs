@@ -155,8 +155,8 @@ fs.readdir(`./url-parameters-src/`, function (err, files) {
   createFileAndFolder(`url-parameters/api.json`, JSON.stringify(params))
 });
 
-createFileAndFolder(`url-parameters/test.json`)
-createFileAndFolder(`a/test.json`)
+createFileAndFolder(`url-parameters/test.json`, ``)
+createFileAndFolder(`a/test.json`, ``)
 
 //////////
 // Docs //
@@ -401,7 +401,7 @@ ${html}
 // Helper Functions //
 //////////////////////
 
-function createFileAndFolder(path, content) {
+function createFileAndFolder(path, content = ``) {
   let dirs = path.split(`/`)
   let fileName = dirs.reverse()[0]
   dirs.reverse().pop()
