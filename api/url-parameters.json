@@ -1,4 +1,123 @@
 {
+  "music-widget": {
+    "URLSearchParams": [
+      {
+        "name": "General",
+        "type": "heading"
+      },
+      {
+        "name": "theme",
+        "description": "Different visual options for this widget.",
+        "type": "options",
+        "default": "default",
+        "options": [
+          "default",
+          "minimal"
+        ]
+      },
+      {
+        "name": "ws",
+        "description": "The Streamer.bot websocket server.",
+        "default": "ws://localhost:8080/",
+        "type": "string"
+      },
+      {
+        "name": "Font",
+        "type": "heading"
+      },
+      {
+        "name": "font-family",
+        "description": "The Font Family (Case Sensitive).",
+        "default": "Uni Sans CAPS",
+        "type": "string"
+      },
+      {
+        "name": "font-style",
+        "description": "The Font Style.",
+        "default": "normal",
+        "type": "string"
+      },
+      {
+        "name": "font-size",
+        "description": "The Font Size.",
+        "default": "1em",
+        "type": "string"
+      },
+      {
+        "name": "Background",
+        "type": "heading"
+      },
+      {
+        "name": "background",
+        "description": "The background behind the music info.",
+        "default": {
+          "h": 0,
+          "s": 1,
+          "l": 0,
+          "a": 0.7
+        },
+        "type": "color"
+      },
+      {
+        "name": "alt-background",
+        "description": "The background behind the album cover.",
+        "default": {
+          "h": 240,
+          "s": 0.05,
+          "l": 0.11,
+          "a": 1
+        },
+        "type": "color"
+      },
+      {
+        "name": "Colors",
+        "type": "heading"
+      },
+      {
+        "name": "color-primary",
+        "description": "The primary text color, used for the song title.",
+        "default": {
+          "h": 0,
+          "s": 0,
+          "l": 1,
+          "a": 1
+        },
+        "type": "color"
+      },
+      {
+        "name": "color-accent",
+        "description": "The accent text color, used for the song artist.",
+        "default": {
+          "h": 0,
+          "s": 0,
+          "l": 1,
+          "a": 0.7
+        },
+        "type": "color"
+      },
+      {
+        "name": "Border Radius",
+        "type": "heading"
+      },
+      {
+        "name": "border-radius-album-cover",
+        "description": "The border radius on the album cover.",
+        "default": "1em",
+        "type": "string"
+      },
+      {
+        "name": "border-radius-texts-background",
+        "description": "The border radius of the text's background.",
+        "default": "1.5em",
+        "type": "string"
+      }
+    ],
+    "name": "Music Widget",
+    "baseUrl": "https://ik1497.github.io/Extensions/Music/",
+    "path": "music-widget",
+    "public": false,
+    "icon": "mdi-spotify"
+  },
   "mute-indicator": {
     "URLSearchParams": [
       {
@@ -101,7 +220,7 @@
     ],
     "name": "Mute Indicator",
     "baseUrl": "https://ik1497.github.io/Extensions/Mute-Indicator/",
-    "path": "mute-indicator",
+    "path": "Mute-Indicator",
     "public": true,
     "icon": "mdi-volume-mute"
   },
@@ -1394,6 +1513,119 @@
     "public": false,
     "icon": "mdi-progress-upload"
   },
+  "timer-widget": {
+    "public": false,
+    "name": "Timer Widget",
+    "path": "Timer-Widget",
+    "baseUrl": "https://ik1497.github.io/Extensions/Timer/",
+    "URLSearchParams": [
+      {
+        "name": "General",
+        "type": "heading"
+      },
+      {
+        "name": "ws",
+        "description": "The Streamer.bot websocket server.",
+        "default": "ws://localhost:8080/",
+        "type": "string"
+      },
+      {
+        "name": "Timer",
+        "type": "heading"
+      },
+      {
+        "name": "timer-background",
+        "description": "The background of the timer.",
+        "default": {
+          "h": 0,
+          "s": 0,
+          "l": 0.09,
+          "a": 1
+        },
+        "type": "color"
+      },
+      {
+        "name": "timer-border-radius",
+        "description": "The border radius of the timer.",
+        "default": "100vmax",
+        "type": "string"
+      },
+      {
+        "name": "timer-spacing",
+        "description": "The spacing between the timer and the edges off the screen.",
+        "default": "0.25em",
+        "type": "string"
+      },
+      {
+        "name": "timer-padding",
+        "description": "The padding on the timer.",
+        "default": "0.75em",
+        "type": "string"
+      },
+      {
+        "name": "timer-minimum-width",
+        "description": "The minimum width of the timer.",
+        "default": "2.5em",
+        "type": "string"
+      },
+      {
+        "name": "Animation",
+        "type": "heading"
+      },
+      {
+        "name": "animation-duration",
+        "description": "The minimum width of the timer.",
+        "default": "2000ms",
+        "type": "string"
+      },
+      {
+        "name": "animation-scaled-size",
+        "description": "How much to multiply the timer's size in the animation state.",
+        "default": "2.5",
+        "type": "string"
+      },
+      {
+        "name": "Font",
+        "type": "heading"
+      },
+      {
+        "name": "font-family",
+        "description": "The Font Family (Case Sensitive).",
+        "default": "Uni Sans CAPS",
+        "type": "string"
+      },
+      {
+        "name": "font-weight",
+        "description": "The font weight.",
+        "default": "900",
+        "type": "string"
+      },
+      {
+        "name": "font-style",
+        "description": "The Font Style.",
+        "default": "normal",
+        "type": "string"
+      },
+      {
+        "name": "font-size",
+        "description": "The Font Size.",
+        "default": "1em",
+        "type": "string"
+      },
+      {
+        "name": "font-color",
+        "description": "The Font Color.",
+        "default": {
+          "h": 0,
+          "s": 0,
+          "l": 1,
+          "a": 1
+        },
+        "type": "color"
+      }
+    ],
+    "icon": "mdi-timer-outline"
+  },
   "progress-bar": {
     "URLSearchParams": [
       {
@@ -2679,122 +2911,9 @@
     ],
     "name": "Progress Bar v3",
     "baseUrl": "https://ik1497.github.io/Extensions/Progress-Bar/",
-    "path": "progress-bar",
+    "path": "Progress-Bar",
     "public": true,
     "icon": "mdi-progress-upload"
-  },
-  "timer-widget": {
-    "public": false,
-    "name": "Timer Widget",
-    "path": "Timer-Widget",
-    "baseUrl": "https://ik1497.github.io/Extensions/Timer/",
-    "URLSearchParams": [
-      {
-        "name": "General",
-        "type": "heading"
-      },
-      {
-        "name": "ws",
-        "description": "The Streamer.bot websocket server.",
-        "default": "ws://localhost:8080/",
-        "type": "string"
-      },
-      {
-        "name": "Timer",
-        "type": "heading"
-      },
-      {
-        "name": "timer-background",
-        "description": "The background of the timer.",
-        "default": {
-          "h": 0,
-          "s": 0,
-          "l": 0.09,
-          "a": 1
-        },
-        "type": "color"
-      },
-      {
-        "name": "timer-border-radius",
-        "description": "The border radius of the timer.",
-        "default": "100vmax",
-        "type": "string"
-      },
-      {
-        "name": "timer-spacing",
-        "description": "The spacing between the timer and the edges off the screen.",
-        "default": "0.25em",
-        "type": "string"
-      },
-      {
-        "name": "timer-padding",
-        "description": "The padding on the timer.",
-        "default": "0.75em",
-        "type": "string"
-      },
-      {
-        "name": "timer-minimum-width",
-        "description": "The minimum width of the timer.",
-        "default": "2.5em",
-        "type": "string"
-      },
-      {
-        "name": "Animation",
-        "type": "heading"
-      },
-      {
-        "name": "animation-duration",
-        "description": "The minimum width of the timer.",
-        "default": "2000ms",
-        "type": "string"
-      },
-      {
-        "name": "animation-scaled-size",
-        "description": "How much to multiply the timer's size in the animation state.",
-        "default": "2.5",
-        "type": "string"
-      },
-      {
-        "name": "Font",
-        "type": "heading"
-      },
-      {
-        "name": "font-family",
-        "description": "The Font Family (Case Sensitive).",
-        "default": "Uni Sans CAPS",
-        "type": "string"
-      },
-      {
-        "name": "font-weight",
-        "description": "The font weight.",
-        "default": "900",
-        "type": "string"
-      },
-      {
-        "name": "font-style",
-        "description": "The Font Style.",
-        "default": "normal",
-        "type": "string"
-      },
-      {
-        "name": "font-size",
-        "description": "The Font Size.",
-        "default": "1em",
-        "type": "string"
-      },
-      {
-        "name": "font-color",
-        "description": "The Font Color.",
-        "default": {
-          "h": 0,
-          "s": 0,
-          "l": 1,
-          "a": 1
-        },
-        "type": "color"
-      }
-    ],
-    "icon": "mdi-timer-outline"
   },
   "weather-widget": {
     "URLSearchParams": [
