@@ -387,7 +387,7 @@ fs.readdir(`./url-parameters-src/`, function (err, files) {
     });
   });
 
-  createFileAndFolder(`/url-parameters/api.json`, JSON.stringify(params))
+  createFileAndFolder(`url-parameters/api.json`, JSON.stringify(params))
 });
 
 //////////////////////
