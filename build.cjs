@@ -149,11 +149,15 @@ fs.readdir(`./url-parameters-src/`, function (err, files) {
       if (!ValidateJson(data)) return
 
       data = JSON.parse(data)
-      if (data.URLSearchParams != undefined) data.URLSearchParams = JSON.parse(data.URLSearchParams)
+      if (data.URLSearchParams != undefined) {
+        data.URLSearchParams = JSON.parse(data.URLSearchParams)
+      } else {
+        data.URLSearchParams = []
+      }
 
       params[file.replaceAll(`.json`, ``)] = data
 
-      if (fileIndex === files.length - 1) createFileAndFolder(`docs/url-parameters/api.json`, JSON.stringify(params, null, 2))
+      if (fileIndex === files.length - 1) createFileAndFolder(`docs/api/url-parameters.json`, JSON.stringify(params, null, 2))
     });
   });
 });
