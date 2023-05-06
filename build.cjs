@@ -391,7 +391,7 @@ fs.readdir(`./url-parameters-src/`, function (err, files) {
 });
 
 createFileAndFolder(`url-parameters/test.json`)
-createFileAndFolder(`test.json`)
+createFileAndFolder(`a/test.json`)
 
 //////////////////////
 // Helper Functions //
