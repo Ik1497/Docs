@@ -138,6 +138,8 @@ converter.setOption(`underline`, true)
 // URL Parameters //
 ////////////////////
 
+fs.mkdirSync(`/url-parameters`, { recursive: true})
+
 createFileAndFolder(`Extensions/test.json`, ``)
 createFileAndFolder(`url-parameters/test.json`, ``)
 createFileAndFolder(`a/test/data.json`, ``)
