@@ -134,6 +134,34 @@ converter.setOption(`strikethrough`, true)
 converter.setOption(`tasklists`, true)
 converter.setOption(`underline`, true)
 
+////////////////////
+// URL Parameters //
+////////////////////
+
+fs.readdir(`./url-parameters-src/`, function (err, files) {
+  if (err) return
+
+  let params = {}
+
+  files.forEach(file => {
+    fs.readFile(`./url-parameters-src/${file}`, `utf8`, (err, data) => {
+      if (err) return
+      if (!ValidateJson(data))
+
+      params[file] = data
+    });
+  });
+
+  createFileAndFolder(`url-parameters/api.json`, JSON.stringify(params))
+});
+
+createFileAndFolder(`url-parameters/test.json`)
+createFileAndFolder(`a/test.json`)
+
+//////////
+// Docs //
+//////////
+
 fs.readdir(`./docs-src/`, function (err, files) {
   if (err) return
 
@@ -368,30 +396,6 @@ ${html}
   
   `)
 }
-
-////////////////////
-// URL Parameters //
-////////////////////
-
-fs.readdir(`./url-parameters-src/`, function (err, files) {
-  if (err) return
-
-  let params = {}
-
-  files.forEach(file => {
-    fs.readFile(`./url-parameters-src/${file}`, `utf8`, (err, data) => {
-      if (err) return
-      if (!ValidateJson(data))
-
-      params[file] = data
-    });
-  });
-
-  createFileAndFolder(`url-parameters/api.json`, JSON.stringify(params))
-});
-
-createFileAndFolder(`url-parameters/test.json`)
-createFileAndFolder(`a/test.json`)
 
 //////////////////////
 // Helper Functions //
