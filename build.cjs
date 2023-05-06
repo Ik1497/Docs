@@ -138,27 +138,20 @@ converter.setOption(`underline`, true)
 // URL Parameters //
 ////////////////////
 
-fs.mkdirSync(`url-parameters`, { recursive: true})
-
-createFileAndFolder(`Extensions/test.json`, ``)
-createFileAndFolder(`url-parameters/test.json`, ``)
-createFileAndFolder(`a/test/data.json`, ``)
-
 fs.readdir(`./url-parameters-src/`, function (err, files) {
   if (err) return
 
   let params = {}
 
-  files.forEach(file => {
+  files.forEach((file, fileIndex) => {
     fs.readFile(`./url-parameters-src/${file}`, `utf8`, (err, data) => {
       if (err) return
-      if (!ValidateJson(data))
 
       params[file] = data
+
+      if (fileIndex === files.length - 1) createFileAndFolder(`url-parameters/api.json`, JSON.stringify(params))
     });
   });
-
-  createFileAndFolder(`url-parameters/api.json`, JSON.stringify(params))
 });
 
 //////////
