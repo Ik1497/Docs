@@ -149,8 +149,9 @@ fs.readdir(`./url-parameters-src/`, function (err, files) {
       if (!ValidateJson(data)) return
 
       data = JSON.parse(data)
+      if (data.URLSearchParams != undefined) data.URLSearchParams = JSON.parse(data.URLSearchParams)
 
-      params[file] = data
+      params[file.replaceAll(`.json`, ``)] = data
 
       if (fileIndex === files.length - 1) createFileAndFolder(`docs/url-parameters/api.json`, JSON.stringify(params, null, 2))
     });
