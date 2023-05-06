@@ -374,7 +374,9 @@ ${html}
 ////////////////////
 
 fs.readFile('/api/url-parameters.json', (err, data) => {
+  console.log(data)
   data = JSON.parse(data)
+  console.log(data)
   createFileAndFolder(`/url-parameters/api.json`, JSON.stringify({
     URLSearchParams: data
   }))
