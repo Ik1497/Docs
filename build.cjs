@@ -138,6 +138,10 @@ converter.setOption(`underline`, true)
 // URL Parameters //
 ////////////////////
 
+createFileAndFolder(`url-parameters/test.json`, ``)
+createFileAndFolder(`a/test.json`, ``)
+createFileAndFolder(`Extensions/test.json`, ``)
+
 fs.readdir(`./url-parameters-src/`, function (err, files) {
   if (err) return
 
@@ -154,9 +158,6 @@ fs.readdir(`./url-parameters-src/`, function (err, files) {
 
   createFileAndFolder(`url-parameters/api.json`, JSON.stringify(params))
 });
-
-createFileAndFolder(`url-parameters/test.json`, ``)
-createFileAndFolder(`a/test.json`, ``)
 
 //////////
 // Docs //
