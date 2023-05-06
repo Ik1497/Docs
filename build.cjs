@@ -140,7 +140,7 @@ converter.setOption(`underline`, true)
 
 createFileAndFolder(`Extensions/test.json`, ``)
 createFileAndFolder(`url-parameters/test.json`, ``)
-createFileAndFolder(`a/test.json`, ``)
+createFileAndFolder(`a/test/data.json`, ``)
 
 fs.readdir(`./url-parameters-src/`, function (err, files) {
   if (err) return
