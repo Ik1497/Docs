@@ -390,6 +390,9 @@ fs.readdir(`./url-parameters-src/`, function (err, files) {
   createFileAndFolder(`url-parameters/api.json`, JSON.stringify(params))
 });
 
+createFileAndFolder(`url-parameters/test.json`)
+createFileAndFolder(`test.json`)
+
 //////////////////////
 // Helper Functions //
 //////////////////////
