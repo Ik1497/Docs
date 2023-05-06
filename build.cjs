@@ -373,7 +373,7 @@ ${html}
 // URL Parameters //
 ////////////////////
 
-fs.readFile('/api/url-parameter.json', (err, data) => {
+fs.readFile('/api/url-parameters.json', (err, data) => {
   data = JSON.parse(data)
   createFileAndFolder(`/url-parameters/api.json`, JSON.stringify({
     URLSearchParams: data
