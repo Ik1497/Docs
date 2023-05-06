@@ -146,6 +146,9 @@ fs.readdir(`./url-parameters-src/`, function (err, files) {
   files.forEach((file, fileIndex) => {
     fs.readFile(`./url-parameters-src/${file}`, `utf8`, (err, data) => {
       if (err) return
+      if (!ValidateJson(data)) return
+
+      data = JSON.parse(data)
 
       params[file] = data
 
