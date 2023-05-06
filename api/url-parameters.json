@@ -19,10 +19,6 @@
     {
       "apiPath": "timer-widget",
       "path": "Timer-Widget"
-    },
-    {
-      "apiPath": "progress-bar-beta",
-      "path": "Progress-Bar-Beta"
     }
   ]
 }
