@@ -92,16 +92,17 @@
 <h2>Action Imports</h2>
 <h3>Twitch</h3>
 <p><v-card>
-      <v-tabs v-model="tabs[`5ce267da-79a8-4129-bcac-7af19adbf8c3`]" bg-color="primary">
+      <v-tabs v-model="tabs[`ac4b182e-6154-459a-a319-92ef74f4250e`]" bg-color="primary">
         <v-tab value="Cheers">Cheers</v-tab>
         <v-tab value="Followers">Followers</v-tab>
         <v-tab value="Subscribers">Subscribers</v-tab>
         <v-tab value="Channel Goal">Channel Goal</v-tab>
         <v-tab value="Charity Goal">Charity Goal</v-tab>
+        <v-tab value="Channel Points">Channel Points</v-tab>
       </v-tabs>
       
       <v-card-text>
-      <v-window v-model="tabs[`5ce267da-79a8-4129-bcac-7af19adbf8c3`]">
+      <v-window v-model="tabs[`ac4b182e-6154-459a-a319-92ef74f4250e`]">
         <v-window-item value="Cheers"><template #default><v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
         <template #default>
           <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
@@ -167,17 +168,30 @@
           <div :style="{overflowX: 'auto', background: '#181818', padding: '1rem', borderRadius: '.5rem .5rem 0 0', color: '#aac8e4', whiteSpace: 'pre'}">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</div>
         </template>
       </v-sheet></template></v-window-item>
+        <v-window-item value="Channel Points"><template #default><v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
+        <template #default>
+          <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
+            <div :style="{fontFamily: 'Poppins', fontWeight: '400', fontSize: '1.1rem'}">Import Code</div>
+            <div :style="{display: 'flex', gap: '.5rem'}">
+              <v-btn @click="copy(`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`)">Copy</v-btn>
+              <v-btn @click="download(`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`)">Download</v-btn>
+            </div>
+          </div>
+          <br>
+          <div :style="{overflowX: 'auto', background: '#181818', padding: '1rem', borderRadius: '.5rem .5rem 0 0', color: '#aac8e4', whiteSpace: 'pre'}">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</div>
+        </template>
+      </v-sheet></template></v-window-item>
       </v-window>
       </v-card-text>
       </v-card></p>
 <h3>YouTube</h3>
 <p><v-card>
-      <v-tabs v-model="tabs[`dbd71c9e-5e94-4a81-9f62-7eced3939d74`]" bg-color="primary">
+      <v-tabs v-model="tabs[`e6131d2a-b8ef-43b7-8f8a-638771ef3326`]" bg-color="primary">
         <v-tab value="Super Chat">Super Chat</v-tab>
       </v-tabs>
       
       <v-card-text>
-      <v-window v-model="tabs[`dbd71c9e-5e94-4a81-9f62-7eced3939d74`]">
+      <v-window v-model="tabs[`e6131d2a-b8ef-43b7-8f8a-638771ef3326`]">
         <v-window-item value="Super Chat"><template #default><v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
         <template #default>
           <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
@@ -196,12 +210,12 @@
       </v-card></p>
 <h3>Ko-fi</h3>
 <p><v-card>
-      <v-tabs v-model="tabs[`e7efb68b-8288-4d50-8d05-8ad393a7d5ce`]" bg-color="primary">
+      <v-tabs v-model="tabs[`d38ee42a-d137-4573-8cf8-fbd22b66b29f`]" bg-color="primary">
         <v-tab value="Donations">Donations</v-tab>
       </v-tabs>
       
       <v-card-text>
-      <v-window v-model="tabs[`e7efb68b-8288-4d50-8d05-8ad393a7d5ce`]">
+      <v-window v-model="tabs[`d38ee42a-d137-4573-8cf8-fbd22b66b29f`]">
         <v-window-item value="Donations"><template #default><v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
         <template #default>
           <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
@@ -220,12 +234,12 @@
       </v-card></p>
 <h3>StreamElements</h3>
 <p><v-card>
-      <v-tabs v-model="tabs[`28280013-ea2d-402e-bc8b-de6b845df5ed`]" bg-color="primary">
+      <v-tabs v-model="tabs[`e727a1fa-b217-4219-91d2-a2d94d32efb1`]" bg-color="primary">
         <v-tab value="Tips">Tips</v-tab>
       </v-tabs>
       
       <v-card-text>
-      <v-window v-model="tabs[`28280013-ea2d-402e-bc8b-de6b845df5ed`]">
+      <v-window v-model="tabs[`e727a1fa-b217-4219-91d2-a2d94d32efb1`]">
         <v-window-item value="Tips"><template #default><v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
         <template #default>
           <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
@@ -244,12 +258,12 @@
       </v-card></p>
 <h3>Streamlabs</h3>
 <p><v-card>
-      <v-tabs v-model="tabs[`1a6645c9-46c0-4544-a553-7b4c655e3548`]" bg-color="primary">
+      <v-tabs v-model="tabs[`11c63401-7f92-4259-87d5-3d1e511ec82a`]" bg-color="primary">
         <v-tab value="Donations">Donations</v-tab>
       </v-tabs>
       
       <v-card-text>
-      <v-window v-model="tabs[`1a6645c9-46c0-4544-a553-7b4c655e3548`]">
+      <v-window v-model="tabs[`11c63401-7f92-4259-87d5-3d1e511ec82a`]">
         <v-window-item value="Donations"><template #default><v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
         <template #default>
           <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
@@ -268,12 +282,12 @@
       </v-card></p>
 <h3>TipeeeStream</h3>
 <p><v-card>
-      <v-tabs v-model="tabs[`21f40e77-6d9a-4e62-9eb3-ebb485c0c41c`]" bg-color="primary">
+      <v-tabs v-model="tabs[`ab42589c-da89-42d9-a75e-cfcae4e12d39`]" bg-color="primary">
         <v-tab value="Donations">Donations</v-tab>
       </v-tabs>
       
       <v-card-text>
-      <v-window v-model="tabs[`21f40e77-6d9a-4e62-9eb3-ebb485c0c41c`]">
+      <v-window v-model="tabs[`ab42589c-da89-42d9-a75e-cfcae4e12d39`]">
         <v-window-item value="Donations"><template #default><v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
         <template #default>
           <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
@@ -292,12 +306,12 @@
       </v-card></p>
 <h3>DonorDrive</h3>
 <p><v-card>
-      <v-tabs v-model="tabs[`39500cb5-43e6-435b-a303-ad27f36371e8`]" bg-color="primary">
+      <v-tabs v-model="tabs[`55dddfee-095f-462d-9a2e-1b18ff7622bb`]" bg-color="primary">
         <v-tab value="Donations">Donations</v-tab>
       </v-tabs>
       
       <v-card-text>
-      <v-window v-model="tabs[`39500cb5-43e6-435b-a303-ad27f36371e8`]">
+      <v-window v-model="tabs[`55dddfee-095f-462d-9a2e-1b18ff7622bb`]">
         <v-window-item value="Donations"><template #default><v-sheet rounded="lg" :style="{padding: '1rem', marginBottom: '1rem', background: '#303030'}">
         <template #default>
           <div :style="{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}">
